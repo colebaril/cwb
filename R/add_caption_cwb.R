@@ -1,4 +1,4 @@
-#' inscribe
+#' add_caption_cwb
 #'
 #' Add a social media caption to a ggplot or gt table.
 #'
@@ -13,7 +13,7 @@
 #' @import sysfonts
 #' @import showtext
 #' @import ggtext
-inscribe <- function(type = c("plot", "table"), 
+add_caption_cwb <- function(type = c("plot", "table"), 
                      include_data_source = FALSE,
                      data_source = NULL,
                      github_username = "colebaril",

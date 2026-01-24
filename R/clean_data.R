@@ -1,4 +1,4 @@
-#' Purify Data
+#' clean_data
 #'
 #' A magical data-cleaning spell to tidy your data frames.
 #'
@@ -31,7 +31,7 @@
 #'   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 #' )
 #' purify_data(df, trim_chars = TRUE, empty_to_na = TRUE)
-purify_data <- function(df,
+clean_data <- function(df,
                         clean_names = TRUE,
                         trim_chars = TRUE,
                         empty_to_na = TRUE,

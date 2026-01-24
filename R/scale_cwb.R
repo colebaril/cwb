@@ -61,7 +61,7 @@ palettes <- list(
 #' ggplot(mpg, aes(displ, hwy, colour = hwy)) +
 #'   geom_point(size = 3) +
 #'   scale_spellbook(palette = "mystic_ocean", type = "c", aesthetics = "colour")
-scale_spellbook <- function(palette,
+scale_cwb <- function(palette,
                             type = c("d", "c"),
                             aesthetics = c("colour", "fill"),
                             name = NULL,

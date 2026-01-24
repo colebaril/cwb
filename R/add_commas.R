@@ -1,10 +1,10 @@
-#' conjure_commas()
+#' add_commas
 #'
 #' Adds commas to large numbers for easier readability.
 #'
 #' @param x A numeric vector.
 #' @return A character vector of the same length as `x` with commas inserted as thousand separators.
 #' @export
-conjure_commas <- function(x) {
+add_commas <- function(x) {
   format(x, big.mark = ",", scientific = FALSE)
 }
