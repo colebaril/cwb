@@ -1,6 +1,6 @@
 Package: cwb
 Title: Cole's personal collection of R functions, themes, and palettes.  
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person("Cole", "Baril", , "colebarilca@gmail.com", role = c("aut", "cre"))
 Description: The cwb package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.

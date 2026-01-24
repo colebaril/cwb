@@ -18,8 +18,6 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-*A whimsical R package of reusable incantations* ✨
-
 The `cwb` package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now use my favorite utilities directly from this package.
 
 ## Installation
@@ -78,7 +76,10 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 
 ### Citing Packages
 
+Using the `cwb::cite_packages()` function, you can easily cite all packages used in
+your script or file, choosing between R Markdown output or plain text options. 
+
 ```{r, echo = TRUE, results = 'asis', comment = NA}
-cite_packages(format == "rmd")
+cite_packages(format = "rmd")
 ```
 

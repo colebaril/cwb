@@ -1,26 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# spellbook
+# cwb
 
 <!-- badges: start -->
 
 <!-- badges: end -->
 
-*A whimsical R package of reusable incantations* ✨
-
-The spellbook package is a personal library of functions, ggplot2
-themes, and palettes that I reach for often in data analysis and
-visualization. Instead of re-writing code across projects, I can now
-summon my favorite utilities directly from this grimoire.
+The `cwb` package is a personal library of functions, ggplot2 themes,
+and palettes that I reach for often in data analysis and visualization.
+Instead of re-writing code across projects, I can now use my favorite
+utilities directly from this package.
 
 ## Installation
 
-You can install the development version of spellbook from
+You can install the development version of cwb from
 [GitHub](https://github.com/) with:
 
 ``` r
-devtools::install_github("colebaril/spellbook")
+devtools::install_github("colebaril/cwb")
 ```
 
 ## Example
@@ -29,31 +27,30 @@ devtools::install_github("colebaril/spellbook")
 
 In the following example, `theme_parchment()` is used to alter thematic
 elements of the plot and `scale_spellbook()` is used to apply my custom
-colour palettes. I also use the `inscribe()` function to automatically
-insert a caption that is pre-formatted with icons and social media tags.
+colour palettes. I also use the `add_caption_cwb()` function to
+automatically insert a caption that is pre-formatted with icons and
+social media tags.
 
 ``` r
-library(spellbook)
-library(tidyverse)
-library(palmerpenguins)
-library(extrafont)
+require(pacman)
+p_load(cwb, tidyverse, palmerpenguins, extrafont)
 
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
-  scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
-  scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
   theme_parchment() +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
-  inscribe(type = "plot") 
+  add_caption_cwb(type = "plot") 
 ```
 
 <img src="man/figures/README-example_theme_palette-1.png" width="100%" />
 
 ### Data Cleaning
 
-In this example, `purify_data()` is used to standardize column names,
+In this example, `clean_data()` is used to standardize column names,
 trim white space, convert empty columns to true `NA`s, and flags
 outliers for any numeric columns using robust means.
 
@@ -82,7 +79,7 @@ print(df)
 #> 8 "Bob"        "Jones"      5000 "2024-12-15"      "b"   " Excellent " NA      
 #> 9 "Bob"        "Jones"      5000 "2024-12-15"      "b"   " Excellent " NA
 
-purify_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
+clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 #> # A tibble: 8 × 8
 #>   first_name last_name score enrollment_date grade comments   empty_col
 #>   <chr>      <chr>     <dbl> <chr>           <chr> <chr>      <lgl>    
@@ -96,3 +93,81 @@ purify_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 #> 8 Bob        Jones      5000 2024-12-15      b     Excellent  NA       
 #> # ℹ 1 more variable: score_outlier_flag <lgl>
 ```
+
+### Citing Packages
+
+Using the `cwb::cite_packages()` function, you can easily cite all
+packages used in your script or file, choosing between R Markdown output
+or plain text options.
+
+``` r
+cite_packages(format = "rmd")
+```
+
+1.  Chang W (2023). *extrafont: Tools for Using Fonts*.
+    <doi:10.32614/CRAN.package.extrafont>
+    <https://doi.org/10.32614/CRAN.package.extrafont>, R package version
+    0.19, <https://CRAN.R-project.org/package=extrafont>.
+
+2.  Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer
+    Archipelago (Antarctica) penguin data*. <doi:10.5281/zenodo.3960218>
+    <https://doi.org/10.5281/zenodo.3960218>, R package version 0.1.0,
+    <https://allisonhorst.github.io/palmerpenguins/>.
+
+3.  Grolemund G, Wickham H (2011). “Dates and Times Made Easy with
+    lubridate.” *Journal of Statistical Software*, *40*(3), 1-25.
+    <https://www.jstatsoft.org/v40/i03/>.
+
+4.  Wickham H (2023). *forcats: Tools for Working with Categorical
+    Variables (Factors)*. <doi:10.32614/CRAN.package.forcats>
+    <https://doi.org/10.32614/CRAN.package.forcats>, R package version
+    1.0.0, <https://CRAN.R-project.org/package=forcats>.
+
+5.  Wickham H (2023). *stringr: Simple, Consistent Wrappers for Common
+    String Operations*. <doi:10.32614/CRAN.package.stringr>
+    <https://doi.org/10.32614/CRAN.package.stringr>, R package version
+    1.5.1, <https://CRAN.R-project.org/package=stringr>.
+
+6.  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). *dplyr:
+    A Grammar of Data Manipulation*. <doi:10.32614/CRAN.package.dplyr>
+    <https://doi.org/10.32614/CRAN.package.dplyr>, R package version
+    1.1.4, <https://CRAN.R-project.org/package=dplyr>.
+
+7.  Wickham H, Henry L (2025). *purrr: Functional Programming Tools*.
+    <doi:10.32614/CRAN.package.purrr>
+    <https://doi.org/10.32614/CRAN.package.purrr>, R package version
+    1.0.4, <https://CRAN.R-project.org/package=purrr>.
+
+8.  Wickham H, Hester J, Bryan J (2024). *readr: Read Rectangular Text
+    Data*. <doi:10.32614/CRAN.package.readr>
+    <https://doi.org/10.32614/CRAN.package.readr>, R package version
+    2.1.5, <https://CRAN.R-project.org/package=readr>.
+
+9.  Wickham H, Vaughan D, Girlich M (2024). *tidyr: Tidy Messy Data*.
+    <doi:10.32614/CRAN.package.tidyr>
+    <https://doi.org/10.32614/CRAN.package.tidyr>, R package version
+    1.3.1, <https://CRAN.R-project.org/package=tidyr>.
+
+10. Müller K, Wickham H (2023). *tibble: Simple Data Frames*.
+    <doi:10.32614/CRAN.package.tibble>
+    <https://doi.org/10.32614/CRAN.package.tibble>, R package version
+    3.2.1, <https://CRAN.R-project.org/package=tibble>.
+
+11. Wickham H (2016). *ggplot2: Elegant Graphics for Data Analysis*.
+    Springer-Verlag New York. ISBN 978-3-319-24277-4,
+    <https://ggplot2.tidyverse.org>.
+
+12. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R,
+    Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller
+    E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V,
+    Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to
+    the tidyverse.” *Journal of Open Source Software*, *4*(43), 1686.
+    <doi:10.21105/joss.01686> <https://doi.org/10.21105/joss.01686>.
+
+13. Baril C (2026). *cwb: Cole’s personal collection of R functions,
+    themes, and palettes.*. R package version 0.0.0.9000, commit
+    f685a138aaaeb35fd415e2a8f3d5edc0dc7f01d8,
+    <https://github.com/colebaril/cwb>.
+
+14. Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.
+    version 0.5.0, <http://github.com/trinker/pacman>.
