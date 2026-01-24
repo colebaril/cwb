@@ -10,8 +10,8 @@
 
 ![License](https://img.shields.io/github/license/colebaril/cwb) ![GitHub
 stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
-[![R-CMD-check](https://img.shields.io/github/workflow/status/colebaril/spellbook/R-CMD-check?label=R-CMD-check)](https://github.com/colebaril/spellbook/actions/workflows/R-CMD-check.yaml)
 
+[![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The `cwb` package is a personal library of functions, ggplot2 themes,
