@@ -10,12 +10,12 @@ theme_spooky()
 A \code{ggplot2} theme object.
 }
 \description{
-A \code{ggplot2} theme styled for Halloween with dark backgrounds,
-glowing text, and spooky atmosphere.
+A minimalist spooky theme for ggplot2.
+Light background, subtle grid lines, and muted accents.
 }
 \examples{
-ggplot(mtcars, aes(x = wt, y = mpg)) +
-  geom_point(color = "orange") +
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point() +
   theme_spooky()
 
 }

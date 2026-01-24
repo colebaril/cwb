@@ -4,7 +4,7 @@
 \alias{theme_parchment}
 \title{theme_parchment()}
 \usage{
-theme_parchment()
+theme_parchment(remove_grid = FALSE)
 }
 \value{
 A \code{ggplot2} theme object that can be added to ggplot plots.
