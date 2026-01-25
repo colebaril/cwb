@@ -5,6 +5,9 @@
 #' @param x A ggplot object or gt table
 #' @param type Either "plot" or "table"
 #' @param github_username Your GitHub username (default: "colebaril")
+#' @param include_data_source Boolean; whether to include data source
+#' @param data_source The source of the data
+#' @param bluesky_username Your Bluesky username 
 #' @return A ggplot or gt object with a caption applied
 #' @export
 #' @import ggplot2

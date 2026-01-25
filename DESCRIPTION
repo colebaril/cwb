@@ -1,5 +1,5 @@
 Package: cwb
-Title: Cole's personal collection of R functions, themes, and palettes.  
+Title: Cole's personal collection of R functions, themes, and palettes
 Version: 0.0.1
 Authors@R: 
     person("Cole", "Baril", , "colebarilca@gmail.com", role = c("aut", "cre"))
@@ -13,4 +13,9 @@ Imports:
   extrafont,
   janitor,
   pacman,
-  purrr
+  purrr,
+  ggtext,
+  glue,
+  gt,
+  showtext,
+  sysfonts

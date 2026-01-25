@@ -7,10 +7,8 @@
 
 [![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/cwb/)
 ![Version](https://img.shields.io/badge/version-0.0.1-blue)
-
 ![License](https://img.shields.io/github/license/colebaril/cwb) ![GitHub
 stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
-
 [![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -53,7 +51,7 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   add_caption_cwb(type = "plot") 
 ```
 
-<img src="man/figures/README-example_theme_palette-1.png" width="100%" />
+<img src="man/figures/README-example_theme_palette-1.png" alt="" width="100%" />
 
 ### Data Cleaning
 
@@ -111,10 +109,10 @@ or plain text options.
 cite_packages(format = "rmd")
 ```
 
-1.  Chang W (2023). *extrafont: Tools for Using Fonts*.
+1.  Chang W (2025). *extrafont: Tools for Using Fonts*.
     <doi:10.32614/CRAN.package.extrafont>
     <https://doi.org/10.32614/CRAN.package.extrafont>, R package version
-    0.19, <https://CRAN.R-project.org/package=extrafont>.
+    0.20, <https://CRAN.R-project.org/package=extrafont>.
 
 2.  Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer
     Archipelago (Antarctica) penguin data*. <doi:10.5281/zenodo.3960218>
@@ -125,40 +123,40 @@ cite_packages(format = "rmd")
     lubridate.” *Journal of Statistical Software*, *40*(3), 1-25.
     <https://www.jstatsoft.org/v40/i03/>.
 
-4.  Wickham H (2023). *forcats: Tools for Working with Categorical
+4.  Wickham H (2025). *forcats: Tools for Working with Categorical
     Variables (Factors)*. <doi:10.32614/CRAN.package.forcats>
     <https://doi.org/10.32614/CRAN.package.forcats>, R package version
-    1.0.0, <https://CRAN.R-project.org/package=forcats>.
+    1.0.1, <https://CRAN.R-project.org/package=forcats>.
 
-5.  Wickham H (2023). *stringr: Simple, Consistent Wrappers for Common
+5.  Wickham H (2025). *stringr: Simple, Consistent Wrappers for Common
     String Operations*. <doi:10.32614/CRAN.package.stringr>
     <https://doi.org/10.32614/CRAN.package.stringr>, R package version
-    1.5.1, <https://CRAN.R-project.org/package=stringr>.
+    1.6.0, <https://CRAN.R-project.org/package=stringr>.
 
 6.  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). *dplyr:
     A Grammar of Data Manipulation*. <doi:10.32614/CRAN.package.dplyr>
     <https://doi.org/10.32614/CRAN.package.dplyr>, R package version
     1.1.4, <https://CRAN.R-project.org/package=dplyr>.
 
-7.  Wickham H, Henry L (2025). *purrr: Functional Programming Tools*.
+7.  Wickham H, Henry L (2026). *purrr: Functional Programming Tools*.
     <doi:10.32614/CRAN.package.purrr>
     <https://doi.org/10.32614/CRAN.package.purrr>, R package version
-    1.0.4, <https://CRAN.R-project.org/package=purrr>.
+    1.2.1, <https://CRAN.R-project.org/package=purrr>.
 
-8.  Wickham H, Hester J, Bryan J (2024). *readr: Read Rectangular Text
+8.  Wickham H, Hester J, Bryan J (2025). *readr: Read Rectangular Text
     Data*. <doi:10.32614/CRAN.package.readr>
     <https://doi.org/10.32614/CRAN.package.readr>, R package version
-    2.1.5, <https://CRAN.R-project.org/package=readr>.
+    2.1.6, <https://CRAN.R-project.org/package=readr>.
 
-9.  Wickham H, Vaughan D, Girlich M (2024). *tidyr: Tidy Messy Data*.
+9.  Wickham H, Vaughan D, Girlich M (2025). *tidyr: Tidy Messy Data*.
     <doi:10.32614/CRAN.package.tidyr>
     <https://doi.org/10.32614/CRAN.package.tidyr>, R package version
-    1.3.1, <https://CRAN.R-project.org/package=tidyr>.
+    1.3.2, <https://CRAN.R-project.org/package=tidyr>.
 
-10. Müller K, Wickham H (2023). *tibble: Simple Data Frames*.
+10. Müller K, Wickham H (2026). *tibble: Simple Data Frames*.
     <doi:10.32614/CRAN.package.tibble>
     <https://doi.org/10.32614/CRAN.package.tibble>, R package version
-    3.2.1, <https://CRAN.R-project.org/package=tibble>.
+    3.3.1, <https://CRAN.R-project.org/package=tibble>.
 
 11. Wickham H (2016). *ggplot2: Elegant Graphics for Data Analysis*.
     Springer-Verlag New York. ISBN 978-3-319-24277-4,
@@ -172,8 +170,8 @@ cite_packages(format = "rmd")
     <doi:10.21105/joss.01686> <https://doi.org/10.21105/joss.01686>.
 
 13. Baril C (2026). *cwb: Cole’s personal collection of R functions,
-    themes, and palettes.*. R package version 0.0.0.9000, commit
-    f685a138aaaeb35fd415e2a8f3d5edc0dc7f01d8,
+    themes, and palettes.*. R package version 0.0.1, commit
+    ffecb414d07b613a3508aa2a80eeea1054799859,
     <https://github.com/colebaril/cwb>.
 
 14. Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.

@@ -31,12 +31,12 @@ Apply a spellbook palette to a ggplot colour or fill scale.
 }
 \examples{
 library(ggplot2)
-library(spellbook)
+library(cwb)
 ggplot(mpg, aes(class, fill = class)) +
   geom_bar() +
-  scale_spellbook(palette = "eldritch_night", type = "d", aesthetics = "fill")
+  scale_cwb(palette = "eldritch_night", type = "d", aesthetics = "fill")
 
 ggplot(mpg, aes(displ, hwy, colour = hwy)) +
   geom_point(size = 3) +
-  scale_spellbook(palette = "mystic_ocean", type = "c", aesthetics = "colour")
+  scale_cwb(palette = "mystic_ocean", type = "c", aesthetics = "colour")
 }

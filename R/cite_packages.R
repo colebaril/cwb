@@ -4,11 +4,11 @@
 #'
 #' @param format Character, either `"rmd"` for Markdown/Quarto or `"plain_text"` for console output.
 #' @param packages Character vector of package names. Defaults to `pacman::p_loaded()`.
-#' @param header Logical, whether to print "## References" header (only applies when format = "rmd").
 #' @return Invisibly returns NULL. Side effect: prints formatted citations.
 #' @export
 #' @import pacman
 #' @import purrr
+#' @importFrom utils capture.output citation
 cite_packages <- function(format = "rmd",
                           packages = pacman::p_loaded()) {
   

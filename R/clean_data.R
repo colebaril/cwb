@@ -1,6 +1,6 @@
 #' clean_data
 #'
-#' A magical data-cleaning spell to tidy your data frames.
+#' A function to tidy data
 #'
 #' @param df A data frame to clean.
 #' @param clean_names Logical. If TRUE, standardizes column names using `janitor::clean_names()`. Default TRUE.
@@ -17,6 +17,7 @@
 #' @param drop_missing_threshold Numeric 0–1. Remove columns with more than this fraction of missing values. Default NULL (disabled).
 #' @param verbose Logical. If TRUE, prints summary of cleaning actions. Default FALSE.
 #' @param return_summary Logical. If TRUE, returns a list with cleaned df and summary of actions. Default FALSE.
+#' @param coerce_numeric Logical. If TRUE, forces numeric-looking columns to numeric type.
 #' @return A cleaned data frame / tibble, or a list with df and summary if `return_summary = TRUE`.
 #' @export
 #' @import janitor
@@ -30,7 +31,7 @@
 #'   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
 #'   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 #' )
-#' purify_data(df, trim_chars = TRUE, empty_to_na = TRUE)
+#' clean_data(df, trim_chars = TRUE, empty_to_na = TRUE)
 clean_data <- function(df,
                         clean_names = TRUE,
                         trim_chars = TRUE,

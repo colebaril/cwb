@@ -50,13 +50,13 @@ clean_data(
 
 \item{return_summary}{Logical. If TRUE, returns a list with cleaned df and summary of actions. Default FALSE.}
 
-\item{coerce_numeric}{Logical. If TRUE, converts numeric-looking character columns to numeric. Default FALSE.}
+\item{coerce_numeric}{Logical. If TRUE, forces numeric-looking columns to numeric type.}
 }
 \value{
 A cleaned data frame / tibble, or a list with df and summary if \code{return_summary = TRUE}.
 }
 \description{
-A magical data-cleaning spell to tidy your data frames.
+A function to tidy data
 }
 \examples{
 df <- tibble::tibble(
@@ -68,5 +68,5 @@ df <- tibble::tibble(
   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 )
-purify_data(df, trim_chars = TRUE, empty_to_na = TRUE)
+clean_data(df, trim_chars = TRUE, empty_to_na = TRUE)
 }

@@ -15,7 +15,13 @@ add_caption_cwb(
 \arguments{
 \item{type}{Either "plot" or "table"}
 
+\item{include_data_source}{Boolean; whether to include data source}
+
+\item{data_source}{The source of the data}
+
 \item{github_username}{Your GitHub username (default: "colebaril")}
+
+\item{bluesky_username}{Your Bluesky username}
 
 \item{x}{A ggplot object or gt table}
 }

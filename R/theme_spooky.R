@@ -6,6 +6,8 @@
 #' @return A `ggplot2` theme object.
 #'
 #' @examples
+#' library(ggplot2)
+#' library(cwb)
 #' ggplot(mtcars, aes(wt, mpg)) +
 #'   geom_point() +
 #'   theme_spooky()
