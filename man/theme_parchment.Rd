@@ -7,7 +7,7 @@
 theme_parchment(remove_grid = FALSE)
 }
 \arguments{
-\item{Logical.}{If TRUE, removes all grid lines.}
+\item{remove_grid}{Logical. If TRUE, removes all grid lines.}
 }
 \value{
 A \code{ggplot2} theme object that can be added to ggplot plots.

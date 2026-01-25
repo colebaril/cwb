@@ -2,7 +2,7 @@
 #'
 #' A `ggplot2` theme styled to resemble old parchment and ink, giving plots
 #' a vintage, manuscript-like appearance.
-#' @param  Logical. If TRUE, removes all grid lines.
+#' @param remove_grid Logical. If TRUE, removes all grid lines.
 #' @return A `ggplot2` theme object that can be added to ggplot plots.
 #' @details
 #' This theme adjusts panel backgrounds, grid lines, and text colors to

@@ -43,7 +43,7 @@ pre-formatted with icons and social media tags.
 
 ```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 7}
 require(pacman)
-p_load(cwb, tidyverse, palmerpenguins, extrafont)
+p_load(cwb, ggplot2, palmerpenguins, extrafont)
 
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +

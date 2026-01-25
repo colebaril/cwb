@@ -49,8 +49,6 @@ clean_data(
 \item{verbose}{Logical. If TRUE, prints summary of cleaning actions. Default FALSE.}
 
 \item{return_summary}{Logical. If TRUE, returns a list with cleaned df and summary of actions. Default FALSE.}
-
-\item{coerce_numeric}{Logical. If TRUE, forces numeric-looking columns to numeric type.}
 }
 \value{
 A cleaned data frame / tibble, or a list with df and summary if \code{return_summary = TRUE}.
@@ -60,12 +58,16 @@ A function to tidy data
 }
 \examples{
 df <- tibble::tibble(
-  "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", "Bob"),
-  "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones", "Jones"),
+  "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", 
+  "Bob"),
+  "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", 
+  "", "Jones", "Jones"),
   "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  # includes outlier
-  "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
+  "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, 
+  "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
   "Grade" = c("A", "b", "C", "A", "B", "", "A", "b", "b"),
-  "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
+  "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", 
+  "Average", " Excellent ", " Excellent "),
   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 )
 clean_data(df, trim_chars = TRUE, empty_to_na = TRUE)

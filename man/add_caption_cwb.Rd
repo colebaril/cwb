@@ -22,8 +22,6 @@ add_caption_cwb(
 \item{github_username}{Your GitHub username (default: "colebaril")}
 
 \item{bluesky_username}{Your Bluesky username}
-
-\item{x}{A ggplot object or gt table}
 }
 \value{
 A ggplot or gt object with a caption applied

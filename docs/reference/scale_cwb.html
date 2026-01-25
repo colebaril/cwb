@@ -78,21 +78,15 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'ggplot2' was built under R version 4.5.2</span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">spellbook</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: 'spellbook'</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from 'package:cwb':</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     cast_safe_df, theme_parchment, theme_spooky</span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">cwb</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">class</span>, fill <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_bar</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/spellbook/man/scale_spellbook.html" class="external-link">scale_spellbook</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"eldritch_night"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">scale_cwb</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"eldritch_night"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="scale_cwb-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span>, colour <span class="op">=</span> <span class="va">hwy</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/pkg/spellbook/man/scale_spellbook.html" class="external-link">scale_spellbook</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"mystic_ocean"</span>, type <span class="op">=</span> <span class="st">"c"</span>, aesthetics <span class="op">=</span> <span class="st">"colour"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">scale_cwb</span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"mystic_ocean"</span>, type <span class="op">=</span> <span class="st">"c"</span>, aesthetics <span class="op">=</span> <span class="st">"colour"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="scale_cwb-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -105,7 +99,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>

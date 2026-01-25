@@ -41,6 +41,7 @@ that the output is always a tibble and can be safely combined using \code{purrr:
 \examples{
 library(tibble)
 library(purrr)
+library(readr)
 
 # Example 1: math function with possible errors
 f <- function(x) {

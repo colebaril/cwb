@@ -1,16 +1,4 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # cwb
-
-<!-- badges: start -->
-
-[![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/cwb/)
-![Version](https://img.shields.io/badge/version-0.0.1-blue)
-![License](https://img.shields.io/github/license/colebaril/cwb) ![GitHub
-stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
-[![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
 
 The `cwb` package is a personal library of functions, ggplot2 themes,
 and palettes that I reach for often in data analysis and visualization.
@@ -30,9 +18,11 @@ devtools::install_github("colebaril/cwb")
 
 ### Themes and Palettes
 
-In the following example, `theme_parchment()` is used to alter thematic
-elements of the plot and `scale_spellbook()` is used to apply my custom
-colour palettes. I also use the `add_caption_cwb()` function to
+In the following example,
+[`theme_parchment()`](reference/theme_parchment.md) is used to alter
+thematic elements of the plot and `scale_spellbook()` is used to apply
+my custom colour palettes. I also use the
+[`add_caption_cwb()`](reference/add_caption_cwb.md) function to
 automatically insert a caption that is pre-formatted with icons and
 social media tags.
 
@@ -51,13 +41,14 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   add_caption_cwb(type = "plot") 
 ```
 
-<img src="man/figures/README-example_theme_palette-1.png" alt="" width="100%" />
+![](reference/figures/README-example_theme_palette-1.png)
 
 ### Data Cleaning
 
-In this example, `clean_data()` is used to standardize column names,
-trim white space, convert empty columns to true `NA`s, and flags
-outliers for any numeric columns using robust means.
+In this example, [`clean_data()`](reference/clean_data.md) is used to
+standardize column names, trim white space, convert empty columns to
+true `NA`s, and flags outliers for any numeric columns using robust
+means.
 
 ``` r
 df <- tibble::tibble(
@@ -101,9 +92,9 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 
 ### Citing Packages
 
-Using the `cwb::cite_packages()` function, you can easily cite all
-packages used in your script or file, choosing between R Markdown output
-or plain text options.
+Using the [`cwb::cite_packages()`](reference/cite_packages.md) function,
+you can easily cite all packages used in your script or file, choosing
+between R Markdown output or plain text options.
 
 ``` r
 cite_packages(format = "rmd")

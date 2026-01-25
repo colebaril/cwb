@@ -24,6 +24,7 @@
 #' @examples
 #' library(tibble)
 #' library(purrr)
+#' library(readr)
 #'
 #' # Example 1: math function with possible errors
 #' f <- function(x) {

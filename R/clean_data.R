@@ -9,7 +9,6 @@
 #' @param standardize_case Character. One of "none", "lower", "upper", "title". Adjusts character/factor casing. Default "none".
 #' @param remove_special_chars Logical. If TRUE, removes punctuation/special characters from character columns. Default FALSE.
 #' @param collapse_rare_levels Logical. If TRUE, lumps rare factor levels into "Other". Default FALSE.
-#' @param coerce_numeric Logical. If TRUE, converts numeric-looking character columns to numeric. Default FALSE.
 #' @param coerce_date Logical. If TRUE, converts date-like character columns to Date. Default FALSE.
 #' @param flag_outliers Logical. If TRUE, flags numeric outliers. Default FALSE.
 #' @param drop_empty_rows Logical. If TRUE, removes rows where all columns are NA. Default TRUE.
@@ -17,18 +16,22 @@
 #' @param drop_missing_threshold Numeric 0–1. Remove columns with more than this fraction of missing values. Default NULL (disabled).
 #' @param verbose Logical. If TRUE, prints summary of cleaning actions. Default FALSE.
 #' @param return_summary Logical. If TRUE, returns a list with cleaned df and summary of actions. Default FALSE.
-#' @param coerce_numeric Logical. If TRUE, forces numeric-looking columns to numeric type.
 #' @return A cleaned data frame / tibble, or a list with df and summary if `return_summary = TRUE`.
 #' @export
 #' @import janitor
+#' @importFrom stats median mad
 #' @examples
 #' df <- tibble::tibble(
-#'   "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", "Bob"),
-#'   "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones", "Jones"),
+#'   "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", 
+#'   "Bob"),
+#'   "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", 
+#'   "", "Jones", "Jones"),
 #'   "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  # includes outlier
-#'   "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
+#'   "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, 
+#'   "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
 #'   "Grade" = c("A", "b", "C", "A", "B", "", "A", "b", "b"),
-#'   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
+#'   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", 
+#'   "Average", " Excellent ", " Excellent "),
 #'   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 #' )
 #' clean_data(df, trim_chars = TRUE, empty_to_na = TRUE)

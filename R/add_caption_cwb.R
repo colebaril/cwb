@@ -2,7 +2,6 @@
 #'
 #' Add a social media caption to a ggplot or gt table.
 #'
-#' @param x A ggplot object or gt table
 #' @param type Either "plot" or "table"
 #' @param github_username Your GitHub username (default: "colebaril")
 #' @param include_data_source Boolean; whether to include data source

@@ -18,4 +18,11 @@ Imports:
   glue,
   gt,
   showtext,
-  sysfonts
+  sysfonts,
+  dplyr,
+  forcats,
+  lubridate,
+  stringr,
+  tibble
+Suggests:
+  readr
