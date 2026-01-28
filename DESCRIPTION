@@ -10,7 +10,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Imports:
   ggplot2,
-  extrafont,
   janitor,
   pacman,
   purrr,
@@ -25,4 +24,5 @@ Imports:
   stringr,
   tibble
 Suggests:
-  readr
+  readr,
+  penguins

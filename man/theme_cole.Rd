@@ -8,7 +8,7 @@ theme_cole(
   base_size = 12,
   base_family = "sans",
   remove_grid = FALSE,
-  axes_only = FALSE,
+  show_axis_lines = c("bottom", "left"),
   dark = FALSE
 )
 }
@@ -19,7 +19,8 @@ theme_cole(
 
 \item{remove_grid}{Logical. If TRUE, removes all grid lines.}
 
-\item{axes_only}{Logical. If TRUE, only x and y axis lines will be drawn.}
+\item{show_axis_lines}{Shows axis lines, text, titles and ticks. c("all", "bottom", "top", "right", "left"); default:
+c("bottom", "left").}
 
 \item{dark}{Logical. If TRUE, plot is transformed to a dark theme.}
 }
@@ -37,7 +38,7 @@ evoke the look of old parchment and handwritten ink. Works with \code{ggplot2} p
 \examples{
 library(ggplot2)
 library(cwb)
-library(penguins)
+library(palmerpenguins)
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   labs(title = "Flipper Length vs. Bill Length",

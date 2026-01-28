@@ -18,10 +18,9 @@ devtools::install_github("colebaril/cwb")
 
 ### Themes and Palettes
 
-In the following example,
-[`theme_parchment()`](reference/theme_parchment.md) is used to alter
-thematic elements of the plot and `scale_spellbook()` is used to apply
-my custom colour palettes. I also use the
+In the following example, `theme_parchment()` is used to alter thematic
+elements of the plot and `scale_spellbook()` is used to apply my custom
+colour palettes. I also use the
 [`add_caption_cwb()`](reference/add_caption_cwb.md) function to
 automatically insert a caption that is pre-formatted with icons and
 social media tags.
