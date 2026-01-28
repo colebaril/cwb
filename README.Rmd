@@ -36,14 +36,14 @@ devtools::install_github("colebaril/cwb")
 ## Example
 
 ### Themes and Palettes
-In the following example, `theme_parchment()` is used to alter thematic elements 
+In the following example, `theme_cole()` is used to alter thematic elements 
 of the plot and `scale_spellbook()` is used to apply my custom colour palettes. 
 I also use the `add_caption_cwb()` function to automatically insert a caption that is
-pre-formatted with icons and social media tags.
+pre-formatted with icons and social media tags. You can easily flip to dark mode!
 
 ```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 7}
 require(pacman)
-p_load(cwb, ggplot2, palmerpenguins, extrafont)
+p_load(cwb, ggplot2, palmerpenguins)
 
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
@@ -51,7 +51,16 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
-  theme_parchment() +
+  theme_cole(axes_only = TRUE, remove_grid = TRUE) +
+  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
+  add_caption_cwb(type = "plot") 
+
+ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
+  geom_point(shape = 21) +
+  geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
+  theme_cole(axes_only = TRUE, remove_grid = TRUE, dark = TRUE) +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
   add_caption_cwb(type = "plot") 
   

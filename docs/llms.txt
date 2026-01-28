@@ -132,6 +132,7 @@ cite_packages(format = "rmd")
 - [`cite_packages()`](cite_packages.md) : cite_packages
 - [`clean_data()`](clean_data.md) : clean_data
 - [`scale_cwb()`](scale_cwb.md) : Spellbook colour scale
+- [`theme_cole()`](theme_cole.md) : theme_cole()
 - [`theme_parchment()`](theme_parchment.md) : theme_parchment()
 - [`theme_spooky()`](theme_spooky.md) : theme_spooky()
 
