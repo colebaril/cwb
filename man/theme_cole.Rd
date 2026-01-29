@@ -39,19 +39,20 @@ evoke the look of old parchment and handwritten ink. Works with \code{ggplot2} p
 library(ggplot2)
 library(cwb)
 library(palmerpenguins)
+
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   labs(title = "Flipper Length vs. Bill Length",
-       subtitle = "test test test") +
-  theme_cole(axes_only = TRUE, remove_grid = TRUE, dark = TRUE) +
+       subtitle = "Lorem ipsum") +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = TRUE, dark = TRUE) +
   add_caption_cwb() 
   
   
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   labs(title = "Flipper Length vs. Bill Length",
-       subtitle = "test test test") +
-  theme_cole(axes_only = TRUE, remove_grid = FALSE) +
+       subtitle = "Lorem ipsum") +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = FALSE) +
   add_caption_cwb() 
 
 }

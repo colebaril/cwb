@@ -18,29 +18,42 @@ devtools::install_github("colebaril/cwb")
 
 ### Themes and Palettes
 
-In the following example, `theme_parchment()` is used to alter thematic
-elements of the plot and `scale_spellbook()` is used to apply my custom
-colour palettes. I also use the
+In the following example, [`theme_cole()`](reference/theme_cole.md) is
+used to alter thematic elements of the plot and `scale_spellbook()` is
+used to apply my custom colour palettes. I also use the
 [`add_caption_cwb()`](reference/add_caption_cwb.md) function to
 automatically insert a caption that is pre-formatted with icons and
-social media tags.
+social media tags. You can easily flip to dark mode!
 
 ``` r
 require(pacman)
-p_load(cwb, ggplot2, palmerpenguins, extrafont)
-
+p_load(cwb, ggplot2, palmerpenguins)
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
-  theme_parchment() +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = TRUE) +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
   add_caption_cwb(type = "plot") 
 ```
 
 ![](reference/figures/README-example_theme_palette-1.png)
+
+``` r
+
+ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
+  geom_point(shape = 21) +
+  geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
+  scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = TRUE, dark = TRUE) +
+  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
+  add_caption_cwb(type = "plot") 
+```
+
+![](reference/figures/README-example_theme_palette-2.png)
 
 ### Data Cleaning
 
@@ -99,24 +112,19 @@ between R Markdown output or plain text options.
 cite_packages(format = "rmd")
 ```
 
-1.  Chang W (2025). *extrafont: Tools for Using Fonts*.
-    <doi:10.32614/CRAN.package.extrafont>
-    <https://doi.org/10.32614/CRAN.package.extrafont>, R package version
-    0.20, <https://CRAN.R-project.org/package=extrafont>.
-
-2.  Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer
+1.  Horst AM, Hill AP, Gorman KB (2020). *palmerpenguins: Palmer
     Archipelago (Antarctica) penguin data*. <doi:10.5281/zenodo.3960218>
     <https://doi.org/10.5281/zenodo.3960218>, R package version 0.1.0,
     <https://allisonhorst.github.io/palmerpenguins/>.
 
-3.  Wickham H (2016). *ggplot2: Elegant Graphics for Data Analysis*.
+2.  Wickham H (2016). *ggplot2: Elegant Graphics for Data Analysis*.
     Springer-Verlag New York. ISBN 978-3-319-24277-4,
     <https://ggplot2.tidyverse.org>.
 
-4.  Baril C (2026). *cwb: Cole’s personal collection of R functions,
-    themes, and palettes.*. R package version 0.0.1, commit
-    ffecb414d07b613a3508aa2a80eeea1054799859,
+3.  Baril C (2026). *cwb: Cole’s personal collection of R functions,
+    themes, and palettes*. R package version 0.0.1, commit
+    01de73b9da19792d6c04cfaf4bb0fb5e790ab784,
     <https://github.com/colebaril/cwb>.
 
-5.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.
+4.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.
     version 0.5.0, <http://github.com/trinker/pacman>.

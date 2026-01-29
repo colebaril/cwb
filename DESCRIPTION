@@ -25,4 +25,4 @@ Imports:
   tibble
 Suggests:
   readr,
-  penguins
+  palmerpenguins

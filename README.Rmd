@@ -45,13 +45,12 @@ pre-formatted with icons and social media tags. You can easily flip to dark mode
 require(pacman)
 p_load(cwb, ggplot2, palmerpenguins)
 
-
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
-  theme_cole(axes_only = TRUE, remove_grid = TRUE) +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = TRUE) +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
   add_caption_cwb(type = "plot") 
 
@@ -60,7 +59,7 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_cwb(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
-  theme_cole(axes_only = TRUE, remove_grid = TRUE, dark = TRUE) +
+  theme_cole(show_axis_lines = c("bottom", "left"), remove_grid = TRUE, dark = TRUE) +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
   add_caption_cwb(type = "plot") 
   
