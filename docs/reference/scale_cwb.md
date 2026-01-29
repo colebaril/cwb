@@ -1,6 +1,6 @@
-# Spellbook colour scale
+# Cole's colour scales
 
-Apply a spellbook palette to a ggplot colour or fill scale.
+Apply a palette to a ggplot colour or fill scale.
 
 ## Usage
 
@@ -44,7 +44,7 @@ A ggplot2 scale object.
 
 ``` r
 library(ggplot2)
-library(cwb)
+library(trashpanda)
 ggplot(mpg, aes(class, fill = class)) +
   geom_bar() +
   scale_cwb(palette = "eldritch_night", type = "d", aesthetics = "fill")

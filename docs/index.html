@@ -5,14 +5,20 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cole's personal collection of R functions, themes, and palettes • cwb</title>
+<title>Cole's personal collection of R functions, themes, and palettes • trashpanda</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Cole's personal collection of R functions, themes, and palettes">
-<meta name="description" content="The cwb package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.">
-<meta property="og:description" content="The cwb package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.">
+<meta name="description" content="Personal utility toolkit for R: data cleaning, plot theming, colour palettes, and workflow helpers.">
+<meta property="og:description" content="Personal utility toolkit for R: data cleaning, plot theming, colour palettes, and workflow helpers.">
+<meta property="og:image" content="/logo.png">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -20,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">cwb</a>
+    <a class="navbar-brand me-2" href="index.html">trashpanda</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
@@ -37,6 +43,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/colebaril/trashpanda/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -45,17 +52,19 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="cwb">cwb<a class="anchor" aria-label="anchor" href="#cwb"></a>
-</h1></div>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="trashpanda-">trashpanda <a class="anchor" aria-label="anchor" href="#trashpanda-"></a>
+</h1>
+</div>
 <!-- badges: start -->
 
-<p>The <code>cwb</code> package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now use my favorite utilities directly from this package.</p>
+<p>If you’ve ever seen me digging through nested folders or dumpster-diving for that one CSV file, you know it’s just a typical day in the life of a data wrangler. Half the columns are missing, some files won’t even open, and everything else is misnamed: chaos, pure and simple. That’s exactly why I built trashpanda: to help me tame messy file systems, clean up unruly data, beautify plots, manage colour palettes, and automate the little tasks that normally make me want to throw my computer into a real dumpster fire.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the development version of cwb from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"colebaril/cwb"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"colebaril/trashpanda"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -63,29 +72,29 @@
 <div class="section level3">
 <h3 id="themes-and-palettes">Themes and Palettes<a class="anchor" aria-label="anchor" href="#themes-and-palettes"></a>
 </h3>
-<p>In the following example, <code><a href="reference/theme_cole.html">theme_cole()</a></code> is used to alter thematic elements of the plot and <code>scale_spellbook()</code> is used to apply my custom colour palettes. I also use the <code><a href="reference/add_caption_cwb.html">add_caption_cwb()</a></code> function to automatically insert a caption that is pre-formatted with icons and social media tags. You can easily flip to dark mode!</p>
+<p>In the following example, <code><a href="reference/theme_cole.html">theme_cole()</a></code> is used to alter thematic elements of the plot and <code><a href="reference/scale_cwb.html">scale_cwb()</a></code> is used to apply my custom colour palettes. I also use the <code><a href="reference/add_caption_cwb.html">add_caption_cwb()</a></code> function to automatically insert a caption that is pre-formatted with icons and social media tags. You can easily flip to dark mode!</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/trinker/pacman" class="external-link">pacman</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html" class="external-link">p_load</a></span><span class="op">(</span><span class="va">cwb</span>, <span class="va">ggplot2</span>, <span class="va">palmerpenguins</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html" class="external-link">p_load</a></span><span class="op">(</span><span class="va">trashpanda</span>, <span class="va">ggplot2</span>, <span class="va">palmerpenguins</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">flipper_length_mm</span>, <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span>, group <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">21</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">flipper_length_mm</span>, <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span>, group <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">21</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_cwb.html">scale_cwb</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Species"</span>, palette <span class="op">=</span> <span class="st">"arcane_flame"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_cwb.html">scale_cwb</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Species"</span>, palette <span class="op">=</span> <span class="st">"arcane_flame"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"colour"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_cole.html">theme_cole</a></span><span class="op">(</span>show_axis_lines <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bottom"</span>, <span class="st">"left"</span><span class="op">)</span>, remove_grid <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Palmer Penguin Bill Length \nvs. Flipper Length"</span>, x <span class="op">=</span> <span class="st">"Flipper Length (mm)"</span>, y <span class="op">=</span> <span class="st">"Bill Length (mm)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Palmer Penguin Bill Length \nvs. Flipper Length"</span>, x <span class="op">=</span> <span class="st">"Flipper Length (mm)"</span>, y <span class="op">=</span> <span class="st">"Bill Length (mm)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/add_caption_cwb.html">add_caption_cwb</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"plot"</span><span class="op">)</span> </span></code></pre></div>
 <p><img src="reference/figures/README-example_theme_palette-1.png" alt="" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">flipper_length_mm</span>, <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span>, group <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">21</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">ggplot</span><span class="op">(</span><span class="va">penguins</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">flipper_length_mm</span>, <span class="va">bill_length_mm</span>, fill <span class="op">=</span> <span class="va">species</span>, group <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>shape <span class="op">=</span> <span class="fl">21</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_smooth</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span>, se <span class="op">=</span> <span class="cn">FALSE</span>, method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_cwb.html">scale_cwb</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Species"</span>, palette <span class="op">=</span> <span class="st">"arcane_flame"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"fill"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/scale_cwb.html">scale_cwb</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Species"</span>, palette <span class="op">=</span> <span class="st">"arcane_flame"</span>, type <span class="op">=</span> <span class="st">"d"</span>, aesthetics <span class="op">=</span> <span class="st">"colour"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/theme_cole.html">theme_cole</a></span><span class="op">(</span>show_axis_lines <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"bottom"</span>, <span class="st">"left"</span><span class="op">)</span>, remove_grid <span class="op">=</span> <span class="cn">TRUE</span>, dark <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Palmer Penguin Bill Length \nvs. Flipper Length"</span>, x <span class="op">=</span> <span class="st">"Flipper Length (mm)"</span>, y <span class="op">=</span> <span class="st">"Bill Length (mm)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Palmer Penguin Bill Length \nvs. Flipper Length"</span>, x <span class="op">=</span> <span class="st">"Flipper Length (mm)"</span>, y <span class="op">=</span> <span class="st">"Bill Length (mm)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="reference/add_caption_cwb.html">add_caption_cwb</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"plot"</span><span class="op">)</span> </span></code></pre></div>
 <p><img src="reference/figures/README-example_theme_palette-2.png" alt="" width="100%"></p>
 </div>
@@ -135,23 +144,30 @@
 <div class="section level3">
 <h3 id="citing-packages">Citing Packages<a class="anchor" aria-label="anchor" href="#citing-packages"></a>
 </h3>
-<p>Using the <code><a href="reference/cite_packages.html">cwb::cite_packages()</a></code> function, you can easily cite all packages used in your script or file, choosing between R Markdown output or plain text options.</p>
+<p>Using the <code><a href="reference/cite_packages.html">trashpanda::cite_packages()</a></code> function, you can easily cite all packages used in your script or file, choosing between R Markdown output or plain text options.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/cite_packages.html">cite_packages</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"rmd"</span><span class="op">)</span></span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Horst AM, Hill AP, Gorman KB (2020). <em>palmerpenguins: Palmer Archipelago (Antarctica) penguin data</em>. <a href="doi:10.5281/zenodo.3960218" class="uri">doi:10.5281/zenodo.3960218</a> <a href="https://doi.org/10.5281/zenodo.3960218" class="external-link uri">https://doi.org/10.5281/zenodo.3960218</a>, R package version 0.1.0, <a href="https://allisonhorst.github.io/palmerpenguins/" class="external-link uri">https://allisonhorst.github.io/palmerpenguins/</a>.</p></li>
 <li><p>Wickham H (2016). <em>ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. ISBN 978-3-319-24277-4, <a href="https://ggplot2.tidyverse.org" class="external-link uri">https://ggplot2.tidyverse.org</a>.</p></li>
-<li><p>Baril C (2026). <em>cwb: Cole’s personal collection of R functions, themes, and palettes</em>. R package version 0.0.1, commit 01de73b9da19792d6c04cfaf4bb0fb5e790ab784, <a href="https://github.com/colebaril/cwb" class="external-link uri">https://github.com/colebaril/cwb</a>.</p></li>
+<li><p>Baril C (2026). <em>trashpanda: Cole’s personal collection of R functions, themes, and palettes</em>. R package version 0.0.1, commit 16d41f7872e62716d73ff275010edf9a058d9a5d, <a href="https://github.com/colebaril/trashpanda" class="external-link uri">https://github.com/colebaril/trashpanda</a>.</p></li>
 <li><p>Rinker TW, Kurkiewicz D (2018). <em>pacman: Package Management for R</em>. version 0.5.0, <a href="http://github.com/trinker/pacman" class="external-link uri">http://github.com/trinker/pacman</a>.</p></li>
 </ol>
 </div>
 </div>
 </div>
-  </main><aside class="col-md-3"><div class="license">
+  </main><aside class="col-md-3"><div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/colebaril/trashpanda/" class="external-link">Browse source code</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a></small></li>
 </ul>
 </div>
 
@@ -159,7 +175,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing cwb</a></li>
+<li><a href="authors.html#citation">Citing trashpanda</a></li>
 </ul>
 </div>
 

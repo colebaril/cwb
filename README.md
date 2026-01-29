@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cwb
+# trashpanda <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 
@@ -12,18 +12,22 @@ stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
 [![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The `cwb` package is a personal library of functions, ggplot2 themes,
-and palettes that I reach for often in data analysis and visualization.
-Instead of re-writing code across projects, I can now use my favorite
-utilities directly from this package.
+If you’ve ever seen me digging through nested folders or dumpster-diving
+for that one CSV file, you know it’s just a typical day in the life of a
+data wrangler; usually, I just feel like a *trash panda*. Half the
+columns are missing, some files won’t even open, and everything else is
+misnamed: chaos, pure and simple. That’s exactly why I built trashpanda:
+to help me tame messy file systems, clean up unruly data, beautify
+plots, manage colour palettes, and automate the little tasks that
+normally make me want to throw my computer into a real dumpster fire.
 
 ## Installation
 
-You can install the development version of cwb from
-[GitHub](https://github.com/) with:
+You can install the development version of trashpanda from
+[GitHub](https://github.com/colebaril/trashpanda) with:
 
 ``` r
-devtools::install_github("colebaril/cwb")
+devtools::install_github("colebaril/trashpanda")
 ```
 
 ## Example
@@ -31,14 +35,14 @@ devtools::install_github("colebaril/cwb")
 ### Themes and Palettes
 
 In the following example, `theme_cole()` is used to alter thematic
-elements of the plot and `scale_spellbook()` is used to apply my custom
-colour palettes. I also use the `add_caption_cwb()` function to
-automatically insert a caption that is pre-formatted with icons and
-social media tags. You can easily flip to dark mode!
+elements of the plot and `scale_cwb()` is used to apply my custom colour
+palettes. I also use the `add_caption_cwb()` function to automatically
+insert a caption that is pre-formatted with icons and social media tags.
+You can easily flip to dark mode!
 
 ``` r
 require(pacman)
-p_load(cwb, ggplot2, palmerpenguins)
+p_load(trashpanda, ggplot2, palmerpenguins)
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
@@ -114,9 +118,9 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 
 ### Citing Packages
 
-Using the `cwb::cite_packages()` function, you can easily cite all
-packages used in your script or file, choosing between R Markdown output
-or plain text options.
+Using the `trashpanda::cite_packages()` function, you can easily cite
+all packages used in your script or file, choosing between R Markdown
+output or plain text options.
 
 ``` r
 cite_packages(format = "rmd")
@@ -131,10 +135,10 @@ cite_packages(format = "rmd")
     Springer-Verlag New York. ISBN 978-3-319-24277-4,
     <https://ggplot2.tidyverse.org>.
 
-3.  Baril C (2026). *cwb: Cole’s personal collection of R functions,
-    themes, and palettes*. R package version 0.0.1, commit
-    01de73b9da19792d6c04cfaf4bb0fb5e790ab784,
-    <https://github.com/colebaril/cwb>.
+3.  Baril C (2026). *trashpanda: Cole’s personal collection of R
+    functions, themes, and palettes*. R package version 0.0.1, commit
+    16d41f7872e62716d73ff275010edf9a058d9a5d,
+    <https://github.com/colebaril/trashpanda>.
 
 4.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.
     version 0.5.0, <http://github.com/trinker/pacman>.

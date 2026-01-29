@@ -2,7 +2,7 @@
 % Please edit documentation in R/scale_cwb.R
 \name{scale_cwb}
 \alias{scale_cwb}
-\title{Spellbook colour scale}
+\title{Cole's colour scales}
 \usage{
 scale_cwb(
   palette,
@@ -27,11 +27,11 @@ scale_cwb(
 A ggplot2 scale object.
 }
 \description{
-Apply a spellbook palette to a ggplot colour or fill scale.
+Apply a palette to a ggplot colour or fill scale.
 }
 \examples{
 library(ggplot2)
-library(cwb)
+library(trashpanda)
 ggplot(mpg, aes(class, fill = class)) +
   geom_bar() +
   scale_cwb(palette = "eldritch_night", type = "d", aesthetics = "fill")

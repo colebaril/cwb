@@ -37,7 +37,7 @@ evoke the look of old parchment and handwritten ink. Works with \code{ggplot2} p
 }
 \examples{
 library(ggplot2)
-library(cwb)
+library(trashpanda)
 library(palmerpenguins)
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +

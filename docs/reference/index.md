@@ -7,5 +7,5 @@
 - [`cast_safe_df()`](cast_safe_df.md) : cast_safe_df()
 - [`cite_packages()`](cite_packages.md) : cite_packages
 - [`clean_data()`](clean_data.md) : clean_data
-- [`scale_cwb()`](scale_cwb.md) : Spellbook colour scale
+- [`scale_cwb()`](scale_cwb.md) : Cole's colour scales
 - [`theme_cole()`](theme_cole.md) : theme_cole()

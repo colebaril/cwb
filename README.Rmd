@@ -23,11 +23,11 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The `trashpanda` package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now use my favorite utilities directly from this package.
+If you’ve ever seen me digging through nested folders or dumpster-diving for that one CSV file, you know it’s just a typical day in the life of a data wrangler; usually, I just feel like a *trash panda*. Half the columns are missing, some files won’t even open, and everything else is misnamed: chaos, pure and simple. That’s exactly why I built trashpanda: to help me tame messy file systems, clean up unruly data, beautify plots, manage colour palettes, and automate the little tasks that normally make me want to throw my computer into a real dumpster fire.
 
 ## Installation
 
-You can install the development version of cwb from [GitHub](https://github.com/) with:
+You can install the development version of trashpanda from [GitHub](https://github.com/colebaril/trashpanda) with:
 
 ``` r
 devtools::install_github("colebaril/trashpanda")

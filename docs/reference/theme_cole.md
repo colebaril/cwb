@@ -52,8 +52,13 @@ evoke the look of old parchment and handwritten ink. Works with
 
 ``` r
 library(ggplot2)
-library(cwb)
+library(trashpanda)
 library(palmerpenguins)
+#> 
+#> Attaching package: ‘palmerpenguins’
+#> The following objects are masked from ‘package:datasets’:
+#> 
+#>     penguins, penguins_raw
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +

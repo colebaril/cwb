@@ -3,7 +3,8 @@ Title: Cole's personal collection of R functions, themes, and palettes
 Version: 0.0.1
 Authors@R: 
     person("Cole", "Baril", , "colebarilca@gmail.com", role = c("aut", "cre"))
-Description: The trashpanda package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.
+Description: Personal utility toolkit for R: data cleaning, plot theming, colour palettes, and workflow helpers.
+URL: https://colebaril.github.io/trashpanda/, https://github.com/colebaril/trashpanda
 License: MIT 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
