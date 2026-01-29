@@ -25,5 +25,7 @@ Imports:
   stringr,
   tibble
 Suggests:
-  readr,
-  palmerpenguins
+    readr,
+    palmerpenguins,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

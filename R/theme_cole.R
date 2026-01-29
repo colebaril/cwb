@@ -1,4 +1,4 @@
-#' theme_cole()
+#' Cole's favourite plot theme
 #'
 #' A `ggplot2` theme styled to resemble old parchment and ink, giving plots
 #' a vintage, manuscript-like appearance.

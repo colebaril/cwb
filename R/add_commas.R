@@ -1,5 +1,3 @@
-#' add_commas
-#'
 #' Adds commas to large numbers for easier readability.
 #'
 #' @param x A numeric vector.

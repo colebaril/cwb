@@ -1,5 +1,3 @@
-#' cite_packages
-#'
 #' Cites packages in various formats (e.g., R Markdown/Quarto or plain text).
 #'
 #' @param format Character, either `"rmd"` for Markdown/Quarto or `"plain_text"` for console output.

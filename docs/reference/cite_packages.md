@@ -1,4 +1,4 @@
-# cite_packages
+# Cites packages in various formats (e.g., R Markdown/Quarto or plain text).
 
 Cites packages in various formats (e.g., R Markdown/Quarto or plain
 text).

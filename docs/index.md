@@ -2,17 +2,17 @@
 
 If you’ve ever seen me digging through nested folders or dumpster-diving
 for that one CSV file, you know it’s just a typical day in the life of a
-data wrangler. Half the columns are missing, some files won’t even open,
-and everything else is misnamed: chaos, pure and simple. That’s exactly
-why I built trashpanda: to help me tame messy file systems, clean up
-unruly data, beautify plots, manage colour palettes, and automate the
-little tasks that normally make me want to throw my computer into a real
-dumpster fire.
+data wrangler; usually, I just feel like a *trash panda*. Half the
+columns are missing, some files won’t even open, and everything else is
+misnamed: chaos, pure and simple. That’s exactly why I built trashpanda:
+to help me tame messy file systems, clean up unruly data, beautify
+plots, manage colour palettes, and automate the little tasks that
+normally make me want to throw my computer into a real dumpster fire.
 
 ## Installation
 
-You can install the development version of cwb from
-[GitHub](https://github.com/) with:
+You can install the development version of trashpanda from
+[GitHub](https://github.com/colebaril/trashpanda) with:
 
 ``` r
 devtools::install_github("colebaril/trashpanda")
@@ -105,6 +105,37 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 #> 7 <NA>       <NA>         14 2025-01-01      A     Average    NA       
 #> 8 Bob        Jones      5000 2024-12-15      b     Excellent  NA       
 #> # ℹ 1 more variable: score_outlier_flag <lgl>
+```
+
+### Read Multiple Files
+
+When I’m wrangling messy data across multiple folders and files,
+[`read_data_tree()`](reference/read_data_tree.md) is my go-to helper. It
+recursively searches a folder for files, reads them safely (even if some
+files are malformed), and combines everything into a single tidy tibble.
+Excel sheets with mixed types? No problem — all columns are safely
+coerced so you won’t get errors on binding rows. You can also select
+specific sheets by name or pattern, filter by extensions, and enforce
+consistent columns.
+
+``` r
+# Read all CSV files in nested "Test" folder, ignore "extra folder"
+results_csv <- read_data_tree(
+  path = "C:/File_Path",
+  ext = "csv",
+  exclude = "extra folder",
+  reader = readr::read_csv,
+  cols = c("id", "value", "date")
+)
+
+# Read all sheets in all Excel files containing "Data" in the sheet name
+results_excel <- read_data_tree(
+  path = "C:/File_Path",
+  ext = "xlsx",
+  reader = readxl::read_excel,
+  sheet_pattern = "Data",
+  cols = c("a", "b", "c")
+)
 ```
 
 ### Citing Packages

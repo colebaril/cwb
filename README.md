@@ -116,6 +116,36 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 #> # ℹ 1 more variable: score_outlier_flag <lgl>
 ```
 
+### Read Multiple Files
+
+When I’m wrangling messy data across multiple folders and files,
+`read_data_tree()` is my go-to helper. It recursively searches a folder
+for files, reads them safely (even if some files are malformed), and
+combines everything into a single tidy tibble. Excel sheets with mixed
+types? No problem — all columns are safely coerced so you won’t get
+errors on binding rows. You can also select specific sheets by name or
+pattern, filter by extensions, and enforce consistent columns.
+
+``` r
+# Read all CSV files in nested "Test" folder, ignore "extra folder"
+results_csv <- read_data_tree(
+  path = "C:/File_Path",
+  ext = "csv",
+  exclude = "extra folder",
+  reader = readr::read_csv,
+  cols = c("id", "value", "date")
+)
+
+# Read all sheets in all Excel files containing "Data" in the sheet name
+results_excel <- read_data_tree(
+  path = "C:/File_Path",
+  ext = "xlsx",
+  reader = readxl::read_excel,
+  sheet_pattern = "Data",
+  cols = c("a", "b", "c")
+)
+```
+
 ### Citing Packages
 
 Using the `trashpanda::cite_packages()` function, you can easily cite

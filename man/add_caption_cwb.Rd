@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_caption_cwb.R
 \name{add_caption_cwb}
 \alias{add_caption_cwb}
-\title{add_caption_cwb}
+\title{Adds a custom caption to plots}
 \usage{
 add_caption_cwb(
   type = c("plot", "table"),

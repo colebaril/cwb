@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_commas.R
 \name{add_commas}
 \alias{add_commas}
-\title{add_commas}
+\title{Adds commas to large numbers for easier readability.}
 \usage{
 add_commas(x)
 }

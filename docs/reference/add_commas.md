@@ -1,4 +1,4 @@
-# add_commas
+# Adds commas to large numbers for easier readability.
 
 Adds commas to large numbers for easier readability.
 

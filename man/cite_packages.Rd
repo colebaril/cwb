@@ -2,7 +2,7 @@
 % Please edit documentation in R/cite_packages.R
 \name{cite_packages}
 \alias{cite_packages}
-\title{cite_packages}
+\title{Cites packages in various formats (e.g., R Markdown/Quarto or plain text).}
 \usage{
 cite_packages(format = "rmd", packages = pacman::p_loaded())
 }

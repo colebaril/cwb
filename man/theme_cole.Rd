@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_cole.R
 \name{theme_cole}
 \alias{theme_cole}
-\title{theme_cole()}
+\title{Cole's favourite plot theme}
 \usage{
 theme_cole(
   base_size = 12,

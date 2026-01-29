@@ -1,4 +1,4 @@
-#' add_caption_cwb
+#' Adds a custom caption to plots
 #'
 #' Add a social media caption to a ggplot or gt table.
 #'
