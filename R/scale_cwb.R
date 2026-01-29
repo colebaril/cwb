@@ -1,7 +1,4 @@
-# ==============================
 # Palettes
-# ==============================
-
 palettes <- list(
   arcane_flame      = c("#7F1D1D", "#B91C1C", "#F97316", "#FDBA74", "#FDE68A"),
   enchanted_forest  = c("#065F46", "#10B981", "#6EE7B7", "#A7F3D0", "#F0FDF4"),
@@ -32,15 +29,9 @@ palettes <- list(
   
 )
 
-
-
-# ==============================
-# Unified Scales
-# ==============================
-
-#' Spellbook colour scale
+#' Cole's colour scales
 #'
-#' Apply a spellbook palette to a ggplot colour or fill scale.
+#' Apply a palette to a ggplot colour or fill scale.
 #'
 #' @param palette Name of the palette (e.g., "arcane_flame").
 #' @param type Scale type: "d" for discrete or "c" for continuous.
@@ -53,7 +44,7 @@ palettes <- list(
 #'
 #' @examples
 #' library(ggplot2)
-#' library(cwb)
+#' library(trashpanda)
 #' ggplot(mpg, aes(class, fill = class)) +
 #'   geom_bar() +
 #'   scale_cwb(palette = "eldritch_night", type = "d", aesthetics = "fill")

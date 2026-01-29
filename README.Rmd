@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# cwb
+# trashpanda <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
 [![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/cwb/)
@@ -23,27 +23,27 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/colebaril/cwb/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The `cwb` package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now use my favorite utilities directly from this package.
+The `trashpanda` package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now use my favorite utilities directly from this package.
 
 ## Installation
 
 You can install the development version of cwb from [GitHub](https://github.com/) with:
 
 ``` r
-devtools::install_github("colebaril/cwb")
+devtools::install_github("colebaril/trashpanda")
 ```
 
 ## Example
 
 ### Themes and Palettes
 In the following example, `theme_cole()` is used to alter thematic elements 
-of the plot and `scale_spellbook()` is used to apply my custom colour palettes. 
+of the plot and `scale_cwb()` is used to apply my custom colour palettes. 
 I also use the `add_caption_cwb()` function to automatically insert a caption that is
 pre-formatted with icons and social media tags. You can easily flip to dark mode!
 
 ```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 7}
 require(pacman)
-p_load(cwb, ggplot2, palmerpenguins)
+p_load(trashpanda, ggplot2, palmerpenguins)
 
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
@@ -89,7 +89,7 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 
 ### Citing Packages
 
-Using the `cwb::cite_packages()` function, you can easily cite all packages used in
+Using the `trashpanda::cite_packages()` function, you can easily cite all packages used in
 your script or file, choosing between R Markdown output or plain text options. 
 
 ```{r, echo = TRUE, results = 'asis', comment = NA}
