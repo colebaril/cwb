@@ -39,8 +39,9 @@ add_caption_cwb <- function(type = c("plot", "table"),
   )
   
   if (include_data_source && !is.null(data_source)) {
-    social_caption <- glue::glue("{social_caption}  
-    <span style='font-weight:bold; color:#4d4d4d;'>Data:</span> <span style='color:#4d4d4d;'>{data_source}</span>")
+    social_caption <- glue::glue("{social_caption}<br>
+<span style='font-weight:bold; color:#4d4d4d;'>Data:</span> 
+<span style='color:#4d4d4d;'>{data_source}</span>")
   }
   
   if (type == "plot") {
