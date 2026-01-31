@@ -44,6 +44,8 @@ add_caption_cwb <- function(type = c("plot", "table"),
 <span style='color:#4d4d4d;'>{data_source}</span>")
   }
   
+  social_caption <- stringr::str_replace_all(social_caption, "\n", "")
+  
   if (type == "plot") {
     return(list(
       labs(caption = social_caption),
