@@ -3,7 +3,7 @@
 #' A `ggplot2` theme styled to resemble old parchment and ink, giving plots
 #' a vintage, manuscript-like appearance.
 #' @param remove_grid Logical. If TRUE, removes all grid lines.
-#' @param show_axis_lines Shows axis lines, text, titles and ticks. c("all", "bottom", "top", "right", "left"); default: 
+#' @param show_axis_lines Shows axis lines, text, titles and ticks. Choose from "all", "none", "bottom", "top", "right", "left"; default: 
 #' c("bottom", "left"). 
 #' @param base_size Base text size. Default 12.
 #' @param base_family Base font family. Default "sans".
@@ -66,12 +66,26 @@ theme_cole <- function(base_size = 12,
   
   if (!is.null(show_axis_lines)) {
     
+    # ---- NEW: explicit "none" option ----
+    if ("none" %in% show_axis_lines) {
+      th <- th + ggplot2::theme(
+        axis.line.x.bottom = ggplot2::element_blank(),
+        axis.line.x.top    = ggplot2::element_blank(),
+        axis.line.y.left   = ggplot2::element_blank(),
+        axis.line.y.right  = ggplot2::element_blank(),
+        panel.border       = ggplot2::element_blank()
+      )
+      
+    } else {
+    
     # Resolve "all" shortcut
     axes <- if ("all" %in% show_axis_lines) {
       c("bottom", "top", "left", "right")
     } else {
       show_axis_lines
     }
+    
+    
     
     # Determine line color based on dark mode
     line_color <- if (dark) "white" else "black"
@@ -115,28 +129,34 @@ theme_cole <- function(base_size = 12,
       )
     }
     
+    }
+  
   }
   
   if (dark) {
     th <- th + ggplot2::theme(
-      plot.background = ggplot2::element_rect(fill = "#222222", color = NA),
-      panel.background = ggplot2::element_rect(fill = "#222222", color = NA),
-      panel.grid.major = ggplot2::element_line(color = "#555555"),
-      panel.grid.minor = ggplot2::element_line(color = "#444444"),
-      axis.text = ggplot2::element_text(color = "white"),
-      axis.title = ggplot2::element_text(color = "white"),
-      plot.title = ggplot2::element_text(color = "white"),
-      plot.subtitle = ggplot2::element_text(color = "white"),
-      strip.text = ggplot2::element_text(color = "white"),
-      legend.background = ggplot2::element_blank(),
-      legend.key = ggplot2::element_blank(),
-      legend.text = ggplot2::element_text(color = "white"),
-      legend.title = ggplot2::element_text(color = "white"),
-      axis.line.x.bottom = element_line(color = "white"),
-      axis.line.y.left   = element_line(color = "white")
-
+      plot.background = element_rect(fill = "#222222", color = NA),
+      panel.background = element_rect(fill = "#222222", color = NA),
+      panel.grid.major = element_line(color = "#555555"),
+      panel.grid.minor = element_line(color = "#444444"),
+      axis.text = element_text(color = "white"),
+      axis.title = element_text(color = "white"),
+      plot.title = element_text(color = "white"),
+      plot.subtitle = element_text(color = "white"),
+      strip.text = element_text(color = "white"),
+      legend.background = element_blank(),
+      legend.key = element_blank(),
+      legend.text = element_text(color = "white"),
+      legend.title = element_text(color = "white"),
+      
+      axis.line.x.bottom = if (!"none" %in% show_axis_lines)
+        element_line(color = "white") else element_blank(),
+      
+      axis.line.y.left = if (!"none" %in% show_axis_lines)
+        element_line(color = "white") else element_blank()
     )
   }
   
   return(th)
 }
+

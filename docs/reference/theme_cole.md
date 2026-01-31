@@ -31,8 +31,8 @@ theme_cole(
 
 - show_axis_lines:
 
-  Shows axis lines, text, titles and ticks. c("all", "bottom", "top",
-  "right", "left"); default: c("bottom", "left").
+  Shows axis lines, text, titles and ticks. Choose from "all", "none",
+  "bottom", "top", "right", "left"; default: c("bottom", "left").
 
 - dark:
 

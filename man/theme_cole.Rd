@@ -19,7 +19,7 @@ theme_cole(
 
 \item{remove_grid}{Logical. If TRUE, removes all grid lines.}
 
-\item{show_axis_lines}{Shows axis lines, text, titles and ticks. c("all", "bottom", "top", "right", "left"); default:
+\item{show_axis_lines}{Shows axis lines, text, titles and ticks. Choose from "all", "none", "bottom", "top", "right", "left"; default:
 c("bottom", "left").}
 
 \item{dark}{Logical. If TRUE, plot is transformed to a dark theme.}
