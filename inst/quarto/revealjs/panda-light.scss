@@ -1,0 +1,20 @@
+/* ---- trashpanda light theme ---- */
+@import "panda-base";
+
+/* Palette */
+$background-color: #ffffff;
+$text-color: #1f2937;
+$muted-text-color: #6b7280;
+$accent-color: #0ea5e9;
+$highlight-color: #ffedd5;
+$code-bg-color: #f8fafc;
+
+/* Apply overrides */
+.reveal {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.reveal h1 {
+  border-bottom-color: $accent-color;
+}
