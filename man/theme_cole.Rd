@@ -9,7 +9,8 @@ theme_cole(
   base_family = "sans",
   remove_grid = FALSE,
   show_axis_lines = c("bottom", "left"),
-  dark = FALSE
+  dark = FALSE,
+  transparent = FALSE
 )
 }
 \arguments{
@@ -23,6 +24,8 @@ theme_cole(
 c("bottom", "left").}
 
 \item{dark}{Logical. If TRUE, plot is transformed to a dark theme.}
+
+\item{transparent}{Logical. If TRUE, plot background is transparent.}
 }
 \value{
 A \code{ggplot2} theme object that can be added to ggplot plots.

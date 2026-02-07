@@ -66,6 +66,10 @@ read_data_tree(
 
   Character or NULL. Regex pattern to match sheets (Excel only).
 
+- ...:
+
+  Additional arguments passed directly to `reader()`.
+
 ## Value
 
 A tibble combining all successfully read files (with columns enforced

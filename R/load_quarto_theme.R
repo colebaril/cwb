@@ -1,6 +1,7 @@
 #' Load a Trashpanda Quarto theme into the current project
 #'
-#' Copies a precompiled CSS theme into the project 'styles/' folder for use in Quarto.
+#' Copies a precompiled CSS theme into the project 'styles/' folder for use in 
+#' Quarto presentations with revealjs.
 #'
 #' @param name Theme name ("dark", "light")
 #' @param dest_folder Destination folder in project (default: "styles")

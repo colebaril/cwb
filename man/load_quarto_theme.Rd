@@ -21,5 +21,6 @@ load_quarto_theme(
 Relative path to the CSS file in your project
 }
 \description{
-Copies a precompiled CSS theme into the project 'styles/' folder for use in Quarto.
+Copies a precompiled CSS theme into the project 'styles/' folder for use in
+Quarto presentations with revealjs.
 }

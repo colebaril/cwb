@@ -23,7 +23,8 @@ Imports:
   forcats,
   lubridate,
   stringr,
-  tibble
+  tibble,
+  readxl
 Suggests:
     readr,
     palmerpenguins,

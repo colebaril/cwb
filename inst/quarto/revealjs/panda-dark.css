@@ -2,26 +2,27 @@
 
 /* Reveal base */
 .reveal {
-  background-color: #0f172a;  /* $background-color override */
-  color: #e5e7eb;            /* $text-color override */
-  font-family: "Inter", "Source Sans Pro", system-ui, sans-serif;
+  background-color: #1f2e32;  /* $background-color override */
+  color: #ebe8e3;            /* $text-color override */
+  font-family: "Montserrat", sans-serif; /* body / paragraph font */
 }
 
 .reveal h1,
 .reveal h2,
 .reveal h3,
 .reveal h4 {
-  color: #f8fafc;
+  font-family: "Playfair Display", serif;  /* headings font */
+  color: #ebe8e3; 
   font-weight: 600;
 }
 
 .reveal h1 {
-  border-bottom: 0.15em solid #38bdf8; /* $accent-color override */
+  border-bottom: 0.15em solid #aae4e6; /* $accent-color override */
   padding-bottom: 0.2em;
 }
 
 .reveal a {
-  color: #38bdf8; /* $accent-color override */
+  color: #aae4e6; /* $accent-color override */
 }
 
 /* Highlighted text */
@@ -30,6 +31,13 @@ mark {
   background-color: #fde047; /* $highlight-color override */
   padding: 0.05em 0.2em;
   border-radius: 0.2em;
+}
+
+.highlighted-bold,
+
+elevate {
+  color: #aae4e6;
+  font-weight: bold;
 }
 
 /* Code */

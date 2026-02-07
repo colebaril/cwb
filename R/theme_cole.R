@@ -8,6 +8,7 @@
 #' @param base_size Base text size. Default 12.
 #' @param base_family Base font family. Default "sans".
 #' @param dark Logical. If TRUE, plot is transformed to a dark theme.
+#' @param transparent Logical. If TRUE, plot background is transparent.
 #' @return A `ggplot2` theme object that can be added to ggplot plots.
 #' @details
 #' This theme adjusts panel backgrounds, grid lines, and text colors to
@@ -40,7 +41,8 @@ theme_cole <- function(base_size = 12,
                        base_family = "sans", 
                        remove_grid = FALSE, 
                        show_axis_lines = c("bottom", "left"),  
-                       dark = FALSE) {
+                       dark = FALSE,
+                       transparent = FALSE) {
   
   th <- theme_minimal(base_size = base_size, base_family = base_family) +
     ggplot2::theme(
@@ -154,6 +156,15 @@ theme_cole <- function(base_size = 12,
       
       axis.line.y.left = if (!"none" %in% show_axis_lines)
         element_line(color = "white") else element_blank()
+    )
+  } else if (transparent) {
+    # Transparent backgrounds in light mode
+    th <- th + theme(
+      plot.background   = element_rect(fill = "transparent", color = NA),
+      panel.background  = element_rect(fill = "transparent", color = NA),
+      legend.background = element_rect(fill = "transparent", color = NA),
+      legend.key        = element_rect(fill = "transparent", color = NA),
+      strip.background  = element_rect(fill = "transparent", color = NA)
     )
   }
   

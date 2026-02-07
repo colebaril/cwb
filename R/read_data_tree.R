@@ -13,6 +13,7 @@
 #' @param recursive Logical. Whether to include subfolders. Default TRUE.
 #' @param sheet Character vector or NULL. Specific sheet names to read (Excel only).
 #' @param sheet_pattern Character or NULL. Regex pattern to match sheets (Excel only).
+#' @param ... Additional arguments passed directly to `reader()`.
 #' @return A tibble combining all successfully read files (with columns enforced and source_file added).
 #' @export
 read_data_tree <- function(path,

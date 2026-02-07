@@ -37,6 +37,14 @@ safe_read_data(
   Missing columns will be added and filled with `NA`, and extra columns
   will be dropped.
 
+- sheet:
+
+  The sheet to be selected if static name.
+
+- sheet_pattern:
+
+  Optional regex pattern to select the sheet by name.
+
 - ...:
 
   Additional arguments passed directly to `reader()`.

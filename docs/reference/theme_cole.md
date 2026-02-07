@@ -11,7 +11,8 @@ theme_cole(
   base_family = "sans",
   remove_grid = FALSE,
   show_axis_lines = c("bottom", "left"),
-  dark = FALSE
+  dark = FALSE,
+  transparent = FALSE
 )
 ```
 
@@ -37,6 +38,10 @@ theme_cole(
 - dark:
 
   Logical. If TRUE, plot is transformed to a dark theme.
+
+- transparent:
+
+  Logical. If TRUE, plot background is transparent.
 
 ## Value
 

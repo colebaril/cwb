@@ -23,6 +23,10 @@ safe_read_data(
 output. Missing columns will be added and filled with \code{NA}, and extra
 columns will be dropped.}
 
+\item{sheet}{The sheet to be selected if static name.}
+
+\item{sheet_pattern}{Optional regex pattern to select the sheet by name.}
+
 \item{...}{Additional arguments passed directly to \code{reader()}.}
 }
 \value{

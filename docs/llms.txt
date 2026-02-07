@@ -179,6 +179,8 @@ cite_packages(format = "rmd")
 - [`clean_data()`](clean_data.md) : clean_data
 - [`list_data_files()`](list_data_files.md) : List data files in nested
   folders
+- [`load_quarto_theme()`](load_quarto_theme.md) : Load a Trashpanda
+  Quarto theme into the current project
 - [`read_data_tree()`](read_data_tree.md) : Read all data files from a
   folder tree safely
 - [`safe_read_data()`](safe_read_data.md) : Safely read a data file with
