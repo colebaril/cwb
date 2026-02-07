@@ -5,13 +5,13 @@
 \title{Load a Trashpanda Quarto theme into your project}
 \usage{
 load_quarto_theme(
-  name = c("dark", "light", "serif"),
+  name = c("dark", "light"),
   dest_folder = "styles",
   overwrite = TRUE
 )
 }
 \arguments{
-\item{name}{Theme name ("dark", "light", "serif")}
+\item{name}{Theme name ("dark", "light")}
 
 \item{dest_folder}{Folder to copy CSS into (default: "styles")}
 

@@ -2,12 +2,12 @@
 #'
 #' Copies the precompiled CSS theme into your project, automatically compiling SCSS if needed.
 #'
-#' @param name Theme name ("dark", "light", "serif")
+#' @param name Theme name ("dark", "light")
 #' @param dest_folder Folder to copy CSS into (default: "styles")
 #' @param overwrite Whether to overwrite if CSS already exists in the project (default: TRUE)
 #' @return Relative path to the CSS file in your project
 #' @export
-load_quarto_theme <- function(name = c("dark", "light", "serif"),
+load_quarto_theme <- function(name = c("dark", "light"),
                               dest_folder = "styles",
                               overwrite = TRUE) {
   name <- match.arg(name)
@@ -33,7 +33,9 @@ load_quarto_theme <- function(name = c("dark", "light", "serif"),
     }
     
     css_file <- gsub("\\.scss$", ".css", scss_file)
-    sass::sass(input = scss_file, output = css_file)
+    
+    # COMPILE SCSS TO CSS
+    sass::sass_file(input = scss_file, output = css_file)
   }
   
   # Create destination folder if needed
@@ -46,3 +48,4 @@ load_quarto_theme <- function(name = c("dark", "light", "serif"),
   # Return relative path
   normalizePath(dest_file, winslash = "/", mustWork = FALSE)
 }
+
