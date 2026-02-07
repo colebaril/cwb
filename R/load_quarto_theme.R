@@ -7,7 +7,7 @@
 #' @param overwrite Whether to overwrite if CSS already exists in the project (default: TRUE)
 #' @return Relative path to the CSS file in your project
 #' @export
-load_quarto_theme <- function(name = c("dark", "light"),
+load_quarto_theme <- function(name = c("dark", "light", "serif"),
                               dest_folder = "styles",
                               overwrite = TRUE) {
   name <- match.arg(name)
@@ -34,8 +34,9 @@ load_quarto_theme <- function(name = c("dark", "light"),
     
     css_file <- gsub("\\.scss$", ".css", scss_file)
     
-    # COMPILE SCSS TO CSS
-    sass::sass_file(input = scss_file, output = css_file)
+    # Compile SCSS to CSS
+    css_content <- sass::sass_file(scss_file)
+    writeLines(css_content, css_file)
   }
   
   # Create destination folder if needed
