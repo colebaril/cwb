@@ -1,0 +1,56 @@
+/* ---- trashpanda light theme ---- */
+
+/* Reveal base */
+.reveal {
+  background-color: #ffffff; /* $background-color override */
+  color: #1f2937;           /* $text-color override */
+  font-family: "Inter", "Source Sans Pro", system-ui, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #1f2937;           /* default from base, same as $text-color */
+  font-weight: 600;
+}
+
+.reveal h1 {
+  border-bottom: 0.15em solid #0ea5e9; /* $accent-color override */
+  padding-bottom: 0.2em;
+}
+
+.reveal a {
+  color: #0ea5e9;           /* $accent-color override */
+}
+
+/* Highlighted text */
+.highlight,
+mark {
+  background-color: #ffedd5; /* $highlight-color override */
+  padding: 0.05em 0.2em;
+  border-radius: 0.2em;
+}
+
+/* Code */
+.reveal pre code {
+  background-color: #f8fafc; /* $code-bg-color override */
+  border-radius: 0.4em;
+  padding: 0.8em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+}
+
+/* Muted / secondary text */
+.muted {
+  color: #6b7280;           /* $muted-text-color override */
+}
+
+/* Slide numbers */
+.reveal .slide-number {
+  color: #6b7280;
+  font-size: 0.6em;
+}
+
+/* Any additional overrides from child theme */
+/* In this case, border-bottom color already applied in h1 above */

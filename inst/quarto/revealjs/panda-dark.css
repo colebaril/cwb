@@ -1,1 +1,59 @@
-@import "C:\\Projects\\trashpanda\\inst\\quarto\\revealjs\\panda-dark.scss";
+/* ---- trashpanda dark theme ---- */
+
+/* Reveal base */
+.reveal {
+  background-color: #0f172a;  /* $background-color override */
+  color: #e5e7eb;            /* $text-color override */
+  font-family: "Inter", "Source Sans Pro", system-ui, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.reveal h1 {
+  border-bottom: 0.15em solid #38bdf8; /* $accent-color override */
+  padding-bottom: 0.2em;
+}
+
+.reveal a {
+  color: #38bdf8; /* $accent-color override */
+}
+
+/* Highlighted text */
+.highlight,
+mark {
+  background-color: #fde047; /* $highlight-color override */
+  padding: 0.05em 0.2em;
+  border-radius: 0.2em;
+}
+
+/* Code */
+.reveal pre code {
+  background-color: #020617; /* $code-bg-color override */
+  border-radius: 0.4em;
+  padding: 0.8em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+}
+
+/* Muted / secondary text */
+.muted {
+  color: #94a3b8; /* $muted-text-color override */
+}
+
+/* Slide numbers */
+.reveal .slide-number {
+  color: #94a3b8;
+  font-size: 0.6em;
+}
+
+/* Sections with dark background (child override) */
+.reveal section.has-dark-background {
+  color: #e5e7eb; /* $text-color override */
+}
+

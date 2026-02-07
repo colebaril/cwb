@@ -1,15 +1,15 @@
-#' Load a Trashpanda Quarto theme into your project
+#' Load a Trashpanda Quarto theme into the current project
 #'
-#' Copies the precompiled CSS theme into your project, automatically compiling SCSS if needed.
+#' Copies a precompiled CSS theme into the project 'styles/' folder for use in Quarto.
 #'
 #' @param name Theme name ("dark", "light")
-#' @param dest_folder Folder to copy CSS into (default: "styles")
-#' @param overwrite Whether to overwrite if CSS already exists in the project (default: TRUE)
+#' @param dest_folder Destination folder in project (default: "styles")
+#' @param overwrite Whether to overwrite if the CSS already exists (default: FALSE)
 #' @return Relative path to the CSS file in your project
 #' @export
-load_quarto_theme <- function(name = c("dark", "light", "serif"),
+load_quarto_theme <- function(name = c("dark", "light"),
                               dest_folder = "styles",
-                              overwrite = TRUE) {
+                              overwrite = FALSE) {
   name <- match.arg(name)
   
   # Locate CSS in package
@@ -19,34 +19,28 @@ load_quarto_theme <- function(name = c("dark", "light", "serif"),
     package = "trashpanda"
   )
   
-  # If CSS does not exist, try to compile SCSS
-  if (css_file == "") {
-    scss_file <- system.file(
-      "quarto", "revealjs",
-      paste0("panda-", name, ".scss"),
-      package = "trashpanda"
-    )
-    if (scss_file == "") stop("SCSS theme not found in package.")
-    
-    if (!requireNamespace("sass", quietly = TRUE)) {
-      stop("The 'sass' package is required to compile SCSS. Please install it first.")
-    }
-    
-    css_file <- gsub("\\.scss$", ".css", scss_file)
-    
-    # Compile SCSS to CSS
-    css_content <- sass::sass_file(scss_file)
-    writeLines(css_content, css_file)
-  }
+  if (css_file == "") stop(
+    sprintf("CSS theme '%s' not found in the Trashpanda package.", name)
+  )
   
-  # Create destination folder if needed
+  # Ensure destination folder exists
   if (!dir.exists(dest_folder)) dir.create(dest_folder, recursive = TRUE)
   
-  # Copy CSS into project
+  # Destination path in project
   dest_file <- file.path(dest_folder, paste0("trashpanda-", name, ".css"))
-  file.copy(css_file, dest_file, overwrite = overwrite)
   
-  # Return relative path
-  normalizePath(dest_file, winslash = "/", mustWork = FALSE)
+  if (file.exists(dest_file) && !overwrite) {
+    message(sprintf(
+      "CSS theme '%s' is already in '%s'. You can use it in your Quarto YAML:\n  css: %s",
+      name, dest_folder, normalizePath(dest_file, winslash = "/", mustWork = FALSE)
+    ))
+  } else {
+    file.copy(css_file, dest_file, overwrite = TRUE)
+    message(sprintf(
+      "CSS theme '%s' has been copied to '%s'. You can now use it in your Quarto YAML:\n  css: %s",
+      name, dest_folder, normalizePath(dest_file, winslash = "/", mustWork = FALSE)
+    ))
+  }
+  
+  return(normalizePath(dest_file, winslash = "/", mustWork = FALSE))
 }
-

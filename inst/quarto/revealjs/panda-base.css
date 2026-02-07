@@ -1,0 +1,53 @@
+/* ---- trashpanda base revealjs theme ---- */
+
+/* Reveal overrides */
+.reveal {
+  background-color: #ffffff;
+  color: #1f2933;
+  font-family: "Inter", "Source Sans Pro", system-ui, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: #1f2933;
+  font-weight: 600;
+}
+
+.reveal h1 {
+  border-bottom: 0.15em solid #4f46e5;
+  padding-bottom: 0.2em;
+}
+
+.reveal a {
+  color: #4f46e5;
+}
+
+/* Highlighted text */
+.highlight,
+mark {
+  background-color: #fde68a;
+  padding: 0.05em 0.2em;
+  border-radius: 0.2em;
+}
+
+/* Code */
+.reveal pre code {
+  background-color: #f3f4f6;
+  border-radius: 0.4em;
+  padding: 0.8em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9em;
+}
+
+/* Muted / secondary text */
+.muted {
+  color: #6b7280;
+}
+
+/* Slide numbers */
+.reveal .slide-number {
+  color: #6b7280;
+  font-size: 0.6em;
+}

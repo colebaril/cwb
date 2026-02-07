@@ -2,24 +2,24 @@
 % Please edit documentation in R/load_quarto_theme.R
 \name{load_quarto_theme}
 \alias{load_quarto_theme}
-\title{Load a Trashpanda Quarto theme into your project}
+\title{Load a Trashpanda Quarto theme into the current project}
 \usage{
 load_quarto_theme(
   name = c("dark", "light"),
   dest_folder = "styles",
-  overwrite = TRUE
+  overwrite = FALSE
 )
 }
 \arguments{
 \item{name}{Theme name ("dark", "light")}
 
-\item{dest_folder}{Folder to copy CSS into (default: "styles")}
+\item{dest_folder}{Destination folder in project (default: "styles")}
 
-\item{overwrite}{Whether to overwrite if CSS already exists in the project (default: TRUE)}
+\item{overwrite}{Whether to overwrite if the CSS already exists (default: FALSE)}
 }
 \value{
 Relative path to the CSS file in your project
 }
 \description{
-Copies the precompiled CSS theme into your project, automatically compiling SCSS if needed.
+Copies a precompiled CSS theme into the project 'styles/' folder for use in Quarto.
 }
