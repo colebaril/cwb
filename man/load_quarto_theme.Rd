@@ -5,21 +5,21 @@
 \title{Load a Trashpanda Quarto theme into your project}
 \usage{
 load_quarto_theme(
-  name = c("dark", "light"),
+  name = c("dark", "light", "serif"),
   dest_folder = "styles",
   overwrite = TRUE
 )
 }
 \arguments{
-\item{name}{Theme name ("dark", "light")}
+\item{name}{Theme name ("dark", "light", "serif")}
 
 \item{dest_folder}{Folder to copy CSS into (default: "styles")}
 
-\item{overwrite}{Whether to overwrite if CSS already exists (default: TRUE)}
+\item{overwrite}{Whether to overwrite if CSS already exists in the project (default: TRUE)}
 }
 \value{
 Relative path to the CSS file in your project
 }
 \description{
-Copies the precompiled CSS theme from the package to your project.
+Copies the precompiled CSS theme into your project, automatically compiling SCSS if needed.
 }
