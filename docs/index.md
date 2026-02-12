@@ -22,13 +22,14 @@ devtools::install_github("colebaril/trashpanda")
 
 ### Themes and Palettes
 
-In the following example, [`theme_cole()`](reference/theme_cole.md) is
-used to alter thematic elements of the plot and
-[`scale_cwb()`](reference/scale_cwb.md) is used to apply my custom
-colour palettes. I also use the
-[`add_caption_cwb()`](reference/add_caption_cwb.md) function to
-automatically insert a caption that is pre-formatted with icons and
-social media tags. You can easily flip to dark mode!
+In the following example,
+[`theme_cole()`](https://colebaril.github.io/trashpanda/reference/theme_cole.md)
+is used to alter thematic elements of the plot and
+[`scale_cwb()`](https://colebaril.github.io/trashpanda/reference/scale_cwb.md)
+is used to apply my custom colour palettes. I also use the
+[`add_caption_cwb()`](https://colebaril.github.io/trashpanda/reference/add_caption_cwb.md)
+function to automatically insert a caption that is pre-formatted with
+icons and social media tags. You can easily flip to dark mode!
 
 ``` r
 require(pacman)
@@ -62,10 +63,11 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
 
 ### Data Cleaning
 
-In this example, [`clean_data()`](reference/clean_data.md) is used to
-standardize column names, trim white space, convert empty columns to
-true `NA`s, and flags outliers for any numeric columns using robust
-means.
+In this example,
+[`clean_data()`](https://colebaril.github.io/trashpanda/reference/clean_data.md)
+is used to standardize column names, trim white space, convert empty
+columns to true `NA`s, and flags outliers for any numeric columns using
+robust means.
 
 ``` r
 df <- tibble::tibble(
@@ -110,13 +112,13 @@ clean_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
 ### Read Multiple Files
 
 When I’m wrangling messy data across multiple folders and files,
-[`read_data_tree()`](reference/read_data_tree.md) is my go-to helper. It
-recursively searches a folder for files, reads them safely (even if some
-files are malformed), and combines everything into a single tidy tibble.
-Excel sheets with mixed types? No problem — all columns are safely
-coerced so you won’t get errors on binding rows. You can also select
-specific sheets by name or pattern, filter by extensions, and enforce
-consistent columns.
+[`read_data_tree()`](https://colebaril.github.io/trashpanda/reference/read_data_tree.md)
+is my go-to helper. It recursively searches a folder for files, reads
+them safely (even if some files are malformed), and combines everything
+into a single tidy tibble. Excel sheets with mixed types? No problem —
+all columns are safely coerced so you won’t get errors on binding rows.
+You can also select specific sheets by name or pattern, filter by
+extensions, and enforce consistent columns.
 
 ``` r
 # Read all CSV files in nested "Test" folder, ignore "extra folder"
@@ -138,9 +140,37 @@ results_excel <- read_data_tree(
 )
 ```
 
+### Find tables
+
+Find tables within multiple Excel files and sheets regardless of where
+the table is within the sheet with the
+[`extract_table()`](https://colebaril.github.io/trashpanda/reference/extract_table.md)
+function. In the example below, every excel file in the base directory
+and below is read. Within each Excel file, tables that start with
+`Sample ID` are located and data from those tables is combined into one
+tibble. It automatically detects when the sample ends or you can specify
+an ending column. You can also specify the number of empty rows allowed
+before the table is deemed to have ended. See
+[`extract_table()`](https://colebaril.github.io/trashpanda/reference/extract_table.md)
+documentation for more details.
+
+``` r
+read_data_tree(
+  path = here(),
+  ext = "xlsx",
+  recursive = TRUE,
+  reader = extract_table,
+  start_column = "Sample ID",
+  table_mode = "all",
+  safely = TRUE,
+  id_cols = FALSE
+)
+```
+
 ### Citing Packages
 
-Using the [`trashpanda::cite_packages()`](reference/cite_packages.md)
+Using the
+[`trashpanda::cite_packages()`](https://colebaril.github.io/trashpanda/reference/cite_packages.md)
 function, you can easily cite all packages used in your script or file,
 choosing between R Markdown output or plain text options.
 
@@ -159,7 +189,7 @@ cite_packages(format = "rmd")
 
 3.  Baril C (2026). *trashpanda: Cole’s personal collection of R
     functions, themes, and palettes*. R package version 0.0.1, commit
-    16d41f7872e62716d73ff275010edf9a058d9a5d,
+    14145a48ec656cb89aa5ca8a60aeb12a5c89b085,
     <https://github.com/colebaril/trashpanda>.
 
 4.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.

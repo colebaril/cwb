@@ -11,8 +11,11 @@
 #' @param include Character vector or NULL. Patterns that must be present in the file path.
 #' @param exclude Character vector or NULL. Patterns that must NOT be present in the file path.
 #' @param recursive Logical. Whether to include subfolders. Default TRUE.
-#' @param sheet Character vector or NULL. Specific sheet names to read (Excel only).
+#' @param sheet Character vector or NULL. Specific sheet names to read (Excel only). 
+#' If not NULL, only the explicitly specified sheet will be read for all files.
 #' @param sheet_pattern Character or NULL. Regex pattern to match sheets (Excel only).
+#' If not NULL, all sheets matching the pattern will be attempted to be read.
+#' @param anti_sheet_pattern Character or NULL. Regex pattern to exclude sheets (Excel only)
 #' @param ... Additional arguments passed directly to `reader()`.
 #' @return A tibble combining all successfully read files (with columns enforced and source_file added).
 #' @export
@@ -25,6 +28,7 @@ read_data_tree <- function(path,
                            recursive = TRUE,
                            sheet = NULL,
                            sheet_pattern = NULL,
+                           anti_sheet_pattern = NULL,
                            ...) {
   
   # List files

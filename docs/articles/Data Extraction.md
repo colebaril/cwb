@@ -1,0 +1,183 @@
+# Data Extraction
+
+## Overview
+
+The `trashpanda` package includes a set of **data import utilities**
+designed to:
+
+- List files in complex directory trees with filtering.
+- Safely read multiple file types (CSV, Excel) while handling errors.
+- Extract tables from arbitrary locations within Excel sheets.
+
+These tools are useful for projects where data may be scattered across
+folders or formatted inconsistently.
+
+------------------------------------------------------------------------
+
+## Listing Files
+
+[`list_data_files()`](https://colebaril.github.io/trashpanda/reference/list_data_files.md)
+recursively lists files in a directory, with options to filter by:
+
+- File extension (`ext`)
+- Folder or file patterns to include or exclude
+- Returning a `tibble` or a `list` of paths
+
+``` r
+library(trashpanda)
+library(tibble)
+
+# List all Excel files in nested directories containing "results"
+files <- list_data_files(
+  path = "path/to/project",
+  ext = c("xls", "xlsx", "xlsm"),
+  include = c("results")
+)
+
+files
+```
+
+**Output:** A tibble with `file`, `folder`, and `filename` columns,
+providing a clean inventory of data sources.
+
+## Reading Files Safely
+
+[`safe_read_data()`](https://colebaril.github.io/trashpanda/reference/safe_read_data.md)
+reads a single file while capturing any errors. Returns a list:
+
+`data`: tibble of the imported file (or NULL on failure)
+
+`error`: error message if reading failed
+
+`file`: file path
+
+This is especially useful when reading multiple files, some of which may
+be malformed.
+
+``` r
+results <- safe_read_data(
+  file = "data/example.xlsx",
+  reader = readxl::read_excel,
+  sheet = "Sheet1",
+  cols = c("id", "value", "date")
+)
+
+# Access imported data safely
+results$data
+```
+
+## Reading a Directory Tree
+
+[`read_data_tree()`](https://colebaril.github.io/trashpanda/reference/read_data_tree.md)
+combines the previous functions:
+
+- Recursively lists all relevant files
+
+- Reads each file safely with
+  [`safe_read_data()`](https://colebaril.github.io/trashpanda/reference/safe_read_data.md)
+
+- Optionally enforces consistent column names
+
+- Combines multiple Excel sheets automatically
+
+``` r
+all_data <- read_data_tree(
+  path = "path/to/project",
+  reader = readxl::read_excel,
+  ext = c("xlsx", "xls"),
+  sheet_pattern = "2026",     # optional regex
+  cols = c("id", "value", "date")
+)
+
+all_data
+```
+
+**Why this is useful:**
+
+- You can process hundreds of files scattered in different files with a
+  single call
+
+- Ensures that column names and types remain consistent
+
+- Automatically handles errors and skips unreadable files
+
+## Extracting Tables Anywhere in Excel
+
+Some Excel sheets are messy, with tables not starting in the first row.
+[`extract_table()`](https://colebaril.github.io/trashpanda/reference/extract_table.md):
+
+- Searches for a table starting at a known header (`start_column`)
+
+- Optionally identifies multiple tables per sheet (`table_mode = "all"`)
+
+- Adds metadata columns: file name, sheet, and table ID
+
+``` r
+tbl <- extract_table(
+  path = "data/example.xlsx",
+  sheet = "Sheet1",
+  start_column = "Sample ID"
+)
+
+tbl
+```
+
+This function is particularly useful when:
+
+- You don’t know the exact row where the table starts and the tables are
+  in different locations in each sheet or file
+
+- The table is somewhat consistent (e.g., you know what the table starts
+  with)
+
+- Multiple tables exist in the same sheet
+
+- You want to keep file and sheet metadata
+
+## Putting It All Together
+
+These functions can be combined for batch processing of Excel data:
+
+``` r
+# Extract tables from all files, safely
+read_data_tree(
+  path = here(),
+  ext = "xlsx",
+  recursive = TRUE,
+  reader = extract_table,
+  start_column = "Sample ID",
+  table_mode = "all",
+  safely = TRUE,
+  id_cols = FALSE
+)
+```
+
+In the above example, the following occurs:
+
+1.  All files in the base
+    ([`here::here()`](https://here.r-lib.org/reference/here.html)) and
+    sub directories (`recursive = TRUE`) with the extension “.xlsx” are
+    listed
+2.  Tables from excel files are automatically located and read via the
+    `extract_table` function passed to `reader`
+3.  If there are multiple tables matching criteria on the same sheet,
+    both are read (`table_mode = "all"`)
+
+An example output looks like the following:
+
+``` r
+# A tibble: 40 × 6
+   sheet_name        `Sample ID` Value Notes Extra  source_file                                                      
+   <chr>             <chr>       <chr> <chr> <chr>  <chr>                                                            
+ 1 clean_simple      A1          10    ok    NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 2 clean_simple      A2          12    ok    NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 3 clean_simple      A3          15    ok    NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 4 offset_table      B1          5     low   NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 5 offset_table      B2          8     mid   NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 6 dynamic_width     C1          1     x     NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 7 dynamic_width     C2          2     y     NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 8 explicit_last_col D1          100   a     ignore C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+ 9 explicit_last_col D2          200   b     ignore C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+10 internal_blanks   E1          1     NA    NA     C:/Projects/trashpanda/test/extract_table_test_sheets - Copy.xlsx
+# ℹ 30 more rows
+```

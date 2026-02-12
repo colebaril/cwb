@@ -1,0 +1,116 @@
+# Plot Extras
+
+## Overview
+
+This vignette documents the “plot extras” functionality in the package,
+including:
+
+- Adding social media captions to plots and tables
+- Readable numeric formatting with commas
+- Colour palettes and scales for ggplot2
+
+These functions enhance visualization without altering the core plotting
+logic.
+
+------------------------------------------------------------------------
+
+## 1. Adding a caption with `add_caption_cwb()`
+
+[`add_caption_cwb()`](https://colebaril.github.io/trashpanda/reference/add_caption_cwb.md)
+allows you to add a social media caption to ggplot2 plots. It supports
+GitHub and Bluesky usernames and optionally includes a data source.
+
+### Example: ggplot2 plot
+
+``` r
+library(ggplot2)
+library(trashpanda)
+
+p <- ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  labs(title = "Displacement vs Highway MPG")
+
+p + add_caption_cwb(type = "plot", github_username = "colebaril", include_data_source = TRUE, data_source = "mpg dataset")
+```
+
+![](Plot%20Extras_files/figure-html/unnamed-chunk-1-1.png)
+
+------------------------------------------------------------------------
+
+## 2. Numeric formatting with `add_commas()`
+
+[`add_commas()`](https://colebaril.github.io/trashpanda/reference/add_commas.md)
+formats large numbers with commas for easier readability.
+
+``` r
+x <- c(1000, 25000, 1234567)
+add_commas(x)
+```
+
+    ## [1] "    1,000" "   25,000" "1,234,567"
+
+``` r
+#> "1,000" "25,000" "1,234,567"
+```
+
+This is particularly useful for labeling axes or tables where numeric
+readability is important.
+
+------------------------------------------------------------------------
+
+## 3. Colour palettes and scales
+
+The package includes curated palettes for different visual moods.
+Examples include `arcane_flame`, `enchanted_forest`, `mystic_ocean`, and
+more.
+
+### Using a discrete palette
+
+``` r
+ggplot(mpg, aes(class, fill = class)) +
+  geom_bar() +
+  scale_cwb(palette = "discrete_21", type = "d", aesthetics = "fill")
+```
+
+![](Plot%20Extras_files/figure-html/unnamed-chunk-3-1.png)
+
+### Using a continuous palette
+
+``` r
+ggplot(mpg, aes(displ, hwy, colour = hwy)) +
+  geom_point(size = 3) +
+  scale_cwb(palette = "mystic_ocean", type = "c", aesthetics = "colour")
+```
+
+![](Plot%20Extras_files/figure-html/unnamed-chunk-4-1.png)
+
+### Available palettes
+
+- arcane_flame
+- enchanted_forest
+- mystic_ocean
+- eldritch_night
+- golden_parchment
+- discrete_21, discrete_31, discrete_35
+- spotify_pal
+- halloween
+- haunted_forest
+- ghostly_glow
+- blood_moon
+
+------------------------------------------------------------------------
+
+## Summary
+
+This vignette highlights utility functions that enhance plots and
+tables:
+
+- [`add_caption_cwb()`](https://colebaril.github.io/trashpanda/reference/add_caption_cwb.md)
+  for social media and data source captions
+- [`add_commas()`](https://colebaril.github.io/trashpanda/reference/add_commas.md)
+  for readable numeric labels
+- [`scale_cwb()`](https://colebaril.github.io/trashpanda/reference/scale_cwb.md)
+  for applying curated palettes
+
+These extras integrate seamlessly with `ggplot2` and `gt` objects to
+streamline polished figure creation.

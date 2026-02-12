@@ -7,7 +7,7 @@
 cite_packages(format = "rmd", packages = pacman::p_loaded())
 }
 \arguments{
-\item{format}{Character, either \code{"rmd"} for Markdown/Quarto or \code{"plain_text"} for console output.}
+\item{format}{Character, either \code{"rmd"} for Markdown/Quarto or \code{"text"} for console output.}
 
 \item{packages}{Character vector of package names. Defaults to \code{pacman::p_loaded()}.}
 }

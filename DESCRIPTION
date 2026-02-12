@@ -1,11 +1,18 @@
 Package: trashpanda
-Title: Cole's personal collection of R functions, themes, and palettes
+Title: Cole's Personal Collection of R Functions, Themes, and Palettes
 Version: 0.0.1
 Authors@R: 
-    person("Cole", "Baril", , "colebarilca@gmail.com", role = c("aut", "cre"))
+    person(
+      given = "Cole",
+      family = "Baril",
+      email = "colebarilca@gmail.com",
+      role = c("aut", "cre"),
+      comment = c(copyright = "2026")
+    )
 Description: Personal utility toolkit for R: data cleaning, plot theming, colour palettes, and workflow helpers.
+Copyright: 2026 Cole Baril
 URL: https://colebaril.github.io/trashpanda/, https://github.com/colebaril/trashpanda
-License: MIT 
+License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

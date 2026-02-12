@@ -1,4 +1,25 @@
-url: ~
+url: https://colebaril.github.io/trashpanda/
+
+home:
+  title: Cole's favourite functions and themes
+
+authors:
+  Cole Baril:
+    href: https://colebaril.ca
+
 template:
   bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#0054AD"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
+    danger: "#A6081A"
+    
+news:
+  one_page: true
+  
+navbar:
+  structure:
+    right: [search, github, lightswitch]
 

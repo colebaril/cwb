@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/cwb/)
+[![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/trashpanda/)
 ![Version](https://img.shields.io/badge/version-0.0.1-blue)
 ![License](https://img.shields.io/github/license/colebaril/cwb) ![GitHub
 stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
@@ -146,6 +146,31 @@ results_excel <- read_data_tree(
 )
 ```
 
+### Find tables
+
+Find tables within multiple Excel files and sheets regardless of where
+the table is within the sheet with the `extract_table()` function. In
+the example below, every excel file in the base directory and below is
+read. Within each Excel file, tables that start with `Sample ID` are
+located and data from those tables is combined into one tibble. It
+automatically detects when the sample ends or you can specify an ending
+column. You can also specify the number of empty rows allowed before the
+table is deemed to have ended. See `extract_table()` documentation for
+more details.
+
+``` r
+read_data_tree(
+  path = here(),
+  ext = "xlsx",
+  recursive = TRUE,
+  reader = extract_table,
+  start_column = "Sample ID",
+  table_mode = "all",
+  safely = TRUE,
+  id_cols = FALSE
+)
+```
+
 ### Citing Packages
 
 Using the `trashpanda::cite_packages()` function, you can easily cite
@@ -167,7 +192,7 @@ cite_packages(format = "rmd")
 
 3.  Baril C (2026). *trashpanda: Cole’s personal collection of R
     functions, themes, and palettes*. R package version 0.0.1, commit
-    16d41f7872e62716d73ff275010edf9a058d9a5d,
+    14145a48ec656cb89aa5ca8a60aeb12a5c89b085,
     <https://github.com/colebaril/trashpanda>.
 
 4.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.

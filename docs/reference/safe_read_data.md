@@ -14,6 +14,7 @@ safe_read_data(
   cols = NULL,
   sheet = NULL,
   sheet_pattern = NULL,
+  anti_sheet_pattern = NULL,
   ...
 )
 ```
@@ -39,11 +40,17 @@ safe_read_data(
 
 - sheet:
 
-  The sheet to be selected if static name.
+  The sheet to be selected if static name. If not NULL, only the
+  explicitly specified sheet will be read for all files.
 
 - sheet_pattern:
 
-  Optional regex pattern to select the sheet by name.
+  Optional regex pattern to select the sheet by name. If not NULL, all
+  sheets matching the pattern will be attempted to be read.
+
+- anti_sheet_pattern:
+
+  Character or NULL. Regex pattern to exclude sheets (Excel only)
 
 - ...:
 

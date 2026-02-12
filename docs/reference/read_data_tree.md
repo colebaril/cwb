@@ -18,6 +18,7 @@ read_data_tree(
   recursive = TRUE,
   sheet = NULL,
   sheet_pattern = NULL,
+  anti_sheet_pattern = NULL,
   ...
 )
 ```
@@ -61,10 +62,17 @@ read_data_tree(
 - sheet:
 
   Character vector or NULL. Specific sheet names to read (Excel only).
+  If not NULL, only the explicitly specified sheet will be read for all
+  files.
 
 - sheet_pattern:
 
-  Character or NULL. Regex pattern to match sheets (Excel only).
+  Character or NULL. Regex pattern to match sheets (Excel only). If not
+  NULL, all sheets matching the pattern will be attempted to be read.
+
+- anti_sheet_pattern:
+
+  Character or NULL. Regex pattern to exclude sheets (Excel only)
 
 - ...:
 

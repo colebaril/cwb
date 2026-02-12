@@ -13,8 +13,8 @@ cite_packages(format = "rmd", packages = pacman::p_loaded())
 
 - format:
 
-  Character, either `"rmd"` for Markdown/Quarto or `"plain_text"` for
-  console output.
+  Character, either `"rmd"` for Markdown/Quarto or `"text"` for console
+  output.
 
 - packages:
 

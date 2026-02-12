@@ -13,7 +13,10 @@
 #'   output. Missing columns will be added and filled with `NA`, and extra
 #'   columns will be dropped.
 #' @param sheet The sheet to be selected if static name.
+#' If not NULL, only the explicitly specified sheet will be read for all files.
 #' @param sheet_pattern Optional regex pattern to select the sheet by name.
+#' If not NULL, all sheets matching the pattern will be attempted to be read.
+#' @param anti_sheet_pattern Character or NULL. Regex pattern to exclude sheets (Excel only)
 #' @param ... Additional arguments passed directly to `reader()`.
 #'
 #' @return A named list with the following elements:
@@ -45,6 +48,7 @@ safe_read_data <- function(file,
                            cols = NULL,
                            sheet = NULL,
                            sheet_pattern = NULL,
+                           anti_sheet_pattern = NULL,
                            ...) {
   
   is_excel <- tools::file_ext(file) %in% c("xls", "xlsx", "xlsm")
@@ -64,6 +68,11 @@ safe_read_data <- function(file,
       if (!is.null(sheet_pattern)) {
         # regex match
         sheets_to_read <- all_sheets[grepl(sheet_pattern, all_sheets, ignore.case = TRUE)]
+        
+        if(!is.null(anti_sheet_pattern)) {
+        sheets_to_read <- all_sheets[!grepl(anti_sheet_pattern, all_sheets, ignore.case = TRUE)]
+        }
+        
       } else if (!is.null(sheet)) {
         sheets_to_read <- sheet
       } else {

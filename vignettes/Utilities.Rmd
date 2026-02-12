@@ -1,0 +1,82 @@
+---
+title: "Utilities"
+author: "Cole Baril"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+## Overview
+
+This vignette covers general utility functions included in the package:
+
+* `cite_packages()` – generates formatted citations for loaded packages
+* `load_quarto_theme()` – loads a precompiled Quarto CSS theme into your project
+
+These utilities help manage reproducibility and presentation styling.
+
+---
+
+## 1. Citing Packages with `cite_packages()`
+
+`cite_packages()` prints package citations in either R Markdown/Quarto style or plain text for the console. By default, it cites all currently loaded packages.
+
+### Example: Markdown/Quarto citations
+
+```{r, results = 'asis', comment = NA}
+library(pacman)
+# load some packages
+p_load(trashpanda, ggplot2, dplyr, purrr)
+
+cite_packages(format = "rmd")
+```
+
+Output is formatted for direct copy-paste into R Markdown or Quarto documents.
+
+### Example: Plain text for console
+
+```{r}
+cite_packages(format = "text")
+```
+
+This prints citations in plain text, suitable for scripts or reports.
+
+> Note: Packages without a registered citation will generate a warning.
+
+---
+
+## 2. Loading a Quarto theme with `load_quarto_theme()`
+
+`load_quarto_theme()` copies a precompiled CSS file from the package into your project so you can use it in Quarto presentations with `revealjs`.
+
+### Example: load the dark theme
+
+```{r}
+css_path <- load_quarto_theme(name = "dark")
+# Use in Quarto YAML:
+# css: styles/trashpanda-dark.css
+```
+
+### Example: load the light theme into a custom folder
+
+```{r}
+css_path <- load_quarto_theme(name = "light", dest_folder = "styles/custom", overwrite = TRUE)
+```
+
+This ensures consistent styling for slides without manually copying files.
+
+---
+
+## Summary
+
+The utilities vignette demonstrates:
+
+* How to create reproducible citations with `cite_packages()`
+* How to integrate precompiled Trashpanda Quarto themes into your projects with `load_quarto_theme()`
+
+These tools complement the visualization and workflow functions in the package, supporting reproducible research and presentation-ready outputs.

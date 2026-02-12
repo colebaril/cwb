@@ -1,20 +1,27 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/LICENSE-text.html</loc></url>
-<url><loc>/LICENSE.html</loc></url>
-<url><loc>/reference/add_caption_cwb.html</loc></url>
-<url><loc>/reference/add_commas.html</loc></url>
-<url><loc>/reference/cast_safe_df.html</loc></url>
-<url><loc>/reference/cite_packages.html</loc></url>
-<url><loc>/reference/clean_data.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/list_data_files.html</loc></url>
-<url><loc>/reference/load_quarto_theme.html</loc></url>
-<url><loc>/reference/read_data_tree.html</loc></url>
-<url><loc>/reference/safe_read_data.html</loc></url>
-<url><loc>/reference/scale_cwb.html</loc></url>
-<url><loc>/reference/theme_cole.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/404.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/articles/Data Extraction.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/articles/index.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/articles/Plot Extras.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/articles/Plot Themes.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/articles/Utilities.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/authors.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/index.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/LICENSE-text.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/LICENSE.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/news/index.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/add_caption_cwb.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/add_commas.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/cast_safe_df.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/cite_packages.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/clean_data.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/extract_table.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/index.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/list_data_files.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/load_quarto_theme.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/read_data_tree.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/safe_read_data.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/scale_cwb.html</loc></url>
+<url><loc>https://colebaril.github.io/trashpanda/reference/theme_cole.html</loc></url>
 </urlset>
 

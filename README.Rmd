@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # trashpanda <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
-[![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/cwb/)
+[![pkgdown](https://img.shields.io/badge/documentation-online-blue)](https://colebaril.github.io/trashpanda/)
 ![Version](https://img.shields.io/badge/version-0.0.1-blue)
 ![License](https://img.shields.io/github/license/colebaril/cwb)
 ![GitHub stars](https://img.shields.io/github/stars/colebaril/cwb?style=social)
@@ -108,6 +108,26 @@ results_excel <- read_data_tree(
   reader = readxl::read_excel,
   sheet_pattern = "Data",
   cols = c("a", "b", "c")
+)
+```
+
+### Find tables
+
+Find tables within multiple Excel files and sheets regardless of where the table is within the sheet with the `extract_table()`
+function. In the example below, every excel file in the base directory and below is read. Within each Excel file, tables 
+that start with `Sample ID` are located and data from those tables is combined into one tibble. It automatically detects when the sample ends or you can specify an ending column. You can also specify the number of empty rows allowed before the table is deemed to have ended. See `extract_table()` documentation
+for more details. 
+
+```{r, eval = FALSE}
+read_data_tree(
+  path = here(),
+  ext = "xlsx",
+  recursive = TRUE,
+  reader = extract_table,
+  start_column = "Sample ID",
+  table_mode = "all",
+  safely = TRUE,
+  id_cols = FALSE
 )
 ```
 

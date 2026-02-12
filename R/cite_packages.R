@@ -1,6 +1,6 @@
 #' Cites packages in various formats (e.g., R Markdown/Quarto or plain text).
 #'
-#' @param format Character, either `"rmd"` for Markdown/Quarto or `"plain_text"` for console output.
+#' @param format Character, either `"rmd"` for Markdown/Quarto or `"text"` for console output.
 #' @param packages Character vector of package names. Defaults to `pacman::p_loaded()`.
 #' @return Invisibly returns NULL. Side effect: prints formatted citations.
 #' @export
