@@ -64,12 +64,13 @@ safe_read_data <- function(file,
       
       all_sheets <- readxl::excel_sheets(file)
       
+      # --- Determine candidate sheets ---
+      sheets_to_read <- all_sheets
+      
       if (!is.null(sheet_pattern)) {
-        sheets_to_read <- all_sheets[grepl(sheet_pattern, all_sheets, ignore.case = TRUE)]
-      } else if (!is.null(sheet)) {
-        sheets_to_read <- sheet
-      } else {
-        sheets_to_read <- all_sheets
+        sheets_to_read <- sheets_to_read[
+          grepl(sheet_pattern, sheets_to_read, ignore.case = TRUE)
+        ]
       }
       
       if (!is.null(anti_sheet_pattern)) {
@@ -77,6 +78,15 @@ safe_read_data <- function(file,
           !grepl(anti_sheet_pattern, sheets_to_read, ignore.case = TRUE)
         ]
       }
+      
+      # Explicit sheet overrides patterns
+      if (!is.null(sheet)) {
+        if (!sheet %in% all_sheets) {
+          stop("Sheet '", sheet, "' not found in ", file)
+        }
+        sheets_to_read <- sheet
+      }
+      
       
       if (length(sheets_to_read) == 0) {
         stop("No sheets matched selection criteria in ", file)

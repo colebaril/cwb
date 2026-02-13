@@ -54,6 +54,7 @@ read_data_tree <- function(path,
     cols = cols,
     sheet = sheet,
     sheet_pattern = sheet_pattern,
+    anti_sheet_pattern = anti_sheet_pattern,
     ...
   )
   

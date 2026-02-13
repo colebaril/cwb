@@ -1,6 +1,6 @@
 # Look for and extract a table anywhere within an Excel sheet.
 
-Searches an Excel sheet for a table whose header contains a known start
+Searches Excel sheets for a table whose header contains a known start
 column. The table may appear anywhere in the sheet.
 
 ## Usage
@@ -18,6 +18,8 @@ extract_table(
   safely = TRUE,
   id_cols = TRUE,
   quiet = FALSE,
+  sheet_pattern = NULL,
+  anti_sheet_pattern = NULL,
   ...
 )
 ```
@@ -30,7 +32,7 @@ extract_table(
 
 - sheet:
 
-  Sheet name or index
+  Sheet name or index (used only if patterns are NULL)
 
 - start_column:
 
@@ -52,6 +54,10 @@ extract_table(
 
   Values treated as NA
 
+- table_mode:
+
+  "first" or "all"
+
 - safely:
 
   Logical; if TRUE, return empty tibble on failure
@@ -64,9 +70,17 @@ extract_table(
 
   Logical; suppress messages
 
+- sheet_pattern:
+
+  Optional regex to include sheets
+
+- anti_sheet_pattern:
+
+  Optional regex to exclude sheets
+
 - ...:
 
-  Arguments to be passed directly to `reader`
+  Unused (for compatibility)
 
 ## Value
 

@@ -1,20 +1,23 @@
 #' Look for and extract a table anywhere within an Excel sheet.
 #'
 #' @description
-#' Searches an Excel sheet for a table whose header contains a known start
+#' Searches Excel sheets for a table whose header contains a known start
 #' column. The table may appear anywhere in the sheet.
 #'
 #' @param path Path to Excel file
-#' @param sheet Sheet name or index
+#' @param sheet Sheet name or index (used only if patterns are NULL)
 #' @param start_column Name of first expected column
 #' @param last_column Optional name of last expected column
 #' @param search_until_empty_header Logical; auto-detect column end
 #' @param max_empty_rows Number of consecutive empty rows tolerated
 #' @param na_values Values treated as NA
+#' @param table_mode "first" or "all"
 #' @param safely Logical; if TRUE, return empty tibble on failure
 #' @param id_cols Logical; add file/sheet metadata columns
 #' @param quiet Logical; suppress messages
-#' @param ... Arguments to be passed directly to `reader`
+#' @param sheet_pattern Optional regex to include sheets
+#' @param anti_sheet_pattern Optional regex to exclude sheets
+#' @param ... Unused (for compatibility)
 #'
 #' @return A tibble
 #' @export
@@ -30,11 +33,25 @@ extract_table <- function(
     safely = TRUE,
     id_cols = TRUE,
     quiet = FALSE,
+    sheet_pattern = NULL,
+    anti_sheet_pattern = NULL,
     ...
 ) {
   
   table_mode <- match.arg(table_mode)
   
+  # ---- Sheet-level filtering (CRITICAL FIX) ----
+  if (!is.null(sheet_pattern) &&
+      !grepl(sheet_pattern, sheet, ignore.case = TRUE)) {
+    return(tibble::tibble())
+  }
+  
+  if (!is.null(anti_sheet_pattern) &&
+      grepl(anti_sheet_pattern, sheet, ignore.case = TRUE)) {
+    return(tibble::tibble())
+  }
+  
+  # ---- Extract tables from this ONE sheet ----
   out <- tryCatch(
     extract_table_impl(
       path = path,
@@ -44,11 +61,17 @@ extract_table <- function(
       search_until_empty_header = search_until_empty_header,
       max_empty_rows = max_empty_rows,
       na_values = na_values,
-      table_mode = table_mode
+      table_mode = table_mode,
+      verbose = !quiet
     ),
     error = function(e) {
       if (!safely) stop(e)
-      if (!quiet) message("Skipping: ", basename(path), " / ", sheet, ". No table starting with '", start_column, "' found.")
+      if (!quiet) {
+        message(
+          "Skipping: ", basename(path), " / ", sheet,
+          ". No table starting with '", start_column, "' found."
+        )
+      }
       list()
     }
   )
@@ -73,5 +96,3 @@ extract_table <- function(
   
   dplyr::bind_rows(out)
 }
-
-

@@ -31,6 +31,12 @@ p_load(trashpanda, ggplot2, dplyr, purrr)
 cite_packages(format = "rmd")
 ```
 
+    Warning in citation(pkg): could not determine year for 'trashpanda' from
+    package DESCRIPTION file
+
+    Warning in .f(.x[[i]], ...): could not determine year for 'trashpanda' from
+    package DESCRIPTION file
+
 1.  Wickham H, Henry L (2026). *purrr: Functional Programming Tools*.
     <doi:10.32614/CRAN.package.purrr>
     <https://doi.org/10.32614/CRAN.package.purrr>, R package version
@@ -45,10 +51,9 @@ cite_packages(format = "rmd")
     Springer-Verlag New York. ISBN 978-3-319-24277-4,
     <https://ggplot2.tidyverse.org>.
 
-4.  Baril C (2026). *trashpanda: Cole’s personal collection of R
-    functions, themes, and palettes*. R package version 0.0.1, commit
-    14145a48ec656cb89aa5ca8a60aeb12a5c89b085,
-    <https://github.com/colebaril/trashpanda>.
+4.  Baril C (????). *trashpanda: Cole’s Personal Collection of R
+    Functions, Themes, and Palettes*. R package version 0.0.1,
+    <https://colebaril.github.io/trashpanda/>.
 
 5.  Rinker TW, Kurkiewicz D (2018). *pacman: Package Management for R*.
     version 0.5.0, <http://github.com/trinker/pacman>.
@@ -61,6 +66,12 @@ documents.
 ``` r
 cite_packages(format = "text")
 ```
+
+    ## Warning in citation(pkg): could not determine year for 'trashpanda' from
+    ## package DESCRIPTION file
+
+    ## Warning in .f(.x[[i]], ...): could not determine year for 'trashpanda' from
+    ## package DESCRIPTION file
 
     ## [[1]]
     ## Wickham H, Henry L (2026). _purrr: Functional Programming Tools_.
@@ -80,10 +91,9 @@ cite_packages(format = "text")
     ## <https://ggplot2.tidyverse.org>.
     ## 
     ## [[4]]
-    ## Baril C (2026). _trashpanda: Cole's personal collection of R functions,
-    ## themes, and palettes_. R package version 0.0.1, commit
-    ## 14145a48ec656cb89aa5ca8a60aeb12a5c89b085,
-    ## <https://github.com/colebaril/trashpanda>.
+    ## Baril C (????). _trashpanda: Cole's Personal Collection of R Functions,
+    ## Themes, and Palettes_. R package version 0.0.1,
+    ## <https://colebaril.github.io/trashpanda/>.
     ## 
     ## [[5]]
     ## Rinker TW, Kurkiewicz D (2018). _pacman: Package Management for R_.

@@ -74,7 +74,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Utilities</h1>
                         <h4 data-toc-skip class="author">Cole Baril</h4>
             
-            <h4 data-toc-skip class="date">2026-02-11</h4>
+            <h4 data-toc-skip class="date">2026-02-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/colebaril/trashpanda/blob/HEAD/vignettes/Utilities.Rmd" class="external-link"><code>vignettes/Utilities.Rmd</code></a></small>
       <div class="d-none name"><code>Utilities.Rmd</code></div>
@@ -115,6 +115,10 @@ cites all currently loaded packages.</p>
 <span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html" class="external-link">p_load</a></span><span class="op">(</span><span class="va">trashpanda</span>, <span class="va">ggplot2</span>, <span class="va">dplyr</span>, <span class="va">purrr</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cite_packages.html">cite_packages</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"rmd"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in citation(pkg): could not determine year for 'trashpanda' from
+package DESCRIPTION file</code></pre>
+<pre><code>Warning in .f(.x[[i]], ...): could not determine year for 'trashpanda' from
+package DESCRIPTION file</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Wickham H, Henry L (2026). <em>purrr: Functional Programming
 Tools</em>. <a href="doi:10.32614/CRAN.package.purrr" class="uri">doi:10.32614/CRAN.package.purrr</a> <a href="https://doi.org/10.32614/CRAN.package.purrr" class="external-link uri">https://doi.org/10.32614/CRAN.package.purrr</a>, R package
@@ -124,9 +128,8 @@ version 1.2.1, <a href="https://CRAN.R-project.org/package=purrr" class="externa
 version 1.1.4, <a href="https://CRAN.R-project.org/package=dplyr" class="external-link uri">https://CRAN.R-project.org/package=dplyr</a>.</p></li>
 <li><p>Wickham H (2016). <em>ggplot2: Elegant Graphics for Data
 Analysis</em>. Springer-Verlag New York. ISBN 978-3-319-24277-4, <a href="https://ggplot2.tidyverse.org" class="external-link uri">https://ggplot2.tidyverse.org</a>.</p></li>
-<li><p>Baril C (2026). <em>trashpanda: Cole’s personal collection of R
-functions, themes, and palettes</em>. R package version 0.0.1, commit
-14145a48ec656cb89aa5ca8a60aeb12a5c89b085, <a href="https://github.com/colebaril/trashpanda" class="external-link uri">https://github.com/colebaril/trashpanda</a>.</p></li>
+<li><p>Baril C (????). <em>trashpanda: Cole’s Personal Collection of R
+Functions, Themes, and Palettes</em>. R package version 0.0.1, <a href="https://colebaril.github.io/trashpanda/" class="uri">https://colebaril.github.io/trashpanda/</a>.</p></li>
 <li><p>Rinker TW, Kurkiewicz D (2018). <em>pacman: Package Management
 for R</em>. version 0.5.0, <a href="http://github.com/trinker/pacman" class="external-link uri">http://github.com/trinker/pacman</a>.</p></li>
 </ol>
@@ -136,8 +139,12 @@ documents.</p>
 <div class="section level3">
 <h3 id="example-plain-text-for-console">Example: Plain text for console<a class="anchor" aria-label="anchor" href="#example-plain-text-for-console"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cite_packages.html">cite_packages</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Warning in citation(pkg): could not determine year for 'trashpanda' from</span></span>
+<span><span class="co">## package DESCRIPTION file</span></span></code></pre>
+<pre><code><span><span class="co">## Warning in .f(.x[[i]], ...): could not determine year for 'trashpanda' from</span></span>
+<span><span class="co">## package DESCRIPTION file</span></span></code></pre>
 <pre><code><span><span class="co">## [[1]]</span></span>
 <span><span class="co">## Wickham H, Henry L (2026). _purrr: Functional Programming Tools_.</span></span>
 <span><span class="co">## doi:10.32614/CRAN.package.purrr</span></span>
@@ -156,10 +163,9 @@ documents.</p>
 <span><span class="co">## &lt;https://ggplot2.tidyverse.org&gt;.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## [[4]]</span></span>
-<span><span class="co">## Baril C (2026). _trashpanda: Cole's personal collection of R functions,</span></span>
-<span><span class="co">## themes, and palettes_. R package version 0.0.1, commit</span></span>
-<span><span class="co">## 14145a48ec656cb89aa5ca8a60aeb12a5c89b085,</span></span>
-<span><span class="co">## &lt;https://github.com/colebaril/trashpanda&gt;.</span></span>
+<span><span class="co">## Baril C (????). _trashpanda: Cole's Personal Collection of R Functions,</span></span>
+<span><span class="co">## Themes, and Palettes_. R package version 0.0.1,</span></span>
+<span><span class="co">## &lt;https://colebaril.github.io/trashpanda/&gt;.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## [[5]]</span></span>
 <span><span class="co">## Rinker TW, Kurkiewicz D (2018). _pacman: Package Management for R_.</span></span>
@@ -182,18 +188,18 @@ with <code>revealjs</code>.</p>
 <div class="section level3">
 <h3 id="example-load-the-dark-theme">Example: load the dark theme<a class="anchor" aria-label="anchor" href="#example-load-the-dark-theme"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">css_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_quarto_theme.html">load_quarto_theme</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"dark"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## CSS theme 'dark' is already in 'styles'. You can use it in your Quarto YAML:</span></span>
 <span><span class="co">##   css: C:/Projects/trashpanda/vignettes/styles/trashpanda-dark.css</span></span></code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Use in Quarto YAML:</span></span>
 <span><span class="co"># css: styles/trashpanda-dark.css</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="example-load-the-light-theme-into-a-custom-folder">Example: load the light theme into a custom folder<a class="anchor" aria-label="anchor" href="#example-load-the-light-theme-into-a-custom-folder"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">css_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_quarto_theme.html">load_quarto_theme</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"light"</span>, dest_folder <span class="op">=</span> <span class="st">"styles/custom"</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## CSS theme 'light' has been copied to 'styles/custom'. You can now use it in your Quarto YAML:</span></span>
 <span><span class="co">##   css: C:/Projects/trashpanda/vignettes/styles/custom/trashpanda-light.css</span></span></code></pre>

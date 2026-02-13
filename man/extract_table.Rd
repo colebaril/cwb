@@ -16,13 +16,15 @@ extract_table(
   safely = TRUE,
   id_cols = TRUE,
   quiet = FALSE,
+  sheet_pattern = NULL,
+  anti_sheet_pattern = NULL,
   ...
 )
 }
 \arguments{
 \item{path}{Path to Excel file}
 
-\item{sheet}{Sheet name or index}
+\item{sheet}{Sheet name or index (used only if patterns are NULL)}
 
 \item{start_column}{Name of first expected column}
 
@@ -34,18 +36,24 @@ extract_table(
 
 \item{na_values}{Values treated as NA}
 
+\item{table_mode}{"first" or "all"}
+
 \item{safely}{Logical; if TRUE, return empty tibble on failure}
 
 \item{id_cols}{Logical; add file/sheet metadata columns}
 
 \item{quiet}{Logical; suppress messages}
 
-\item{...}{Arguments to be passed directly to \code{reader}}
+\item{sheet_pattern}{Optional regex to include sheets}
+
+\item{anti_sheet_pattern}{Optional regex to exclude sheets}
+
+\item{...}{Unused (for compatibility)}
 }
 \value{
 A tibble
 }
 \description{
-Searches an Excel sheet for a table whose header contains a known start
+Searches Excel sheets for a table whose header contains a known start
 column. The table may appear anywhere in the sheet.
 }
