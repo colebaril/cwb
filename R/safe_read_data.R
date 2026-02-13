@@ -51,50 +51,46 @@ safe_read_data <- function(file,
                            anti_sheet_pattern = NULL,
                            ...) {
   
+  is_table_reader <- isTRUE(attr(reader, "table_reader"))
   is_excel <- tools::file_ext(file) %in% c("xls", "xlsx", "xlsm")
   
-  # Warn if sheets are passed for non-Excel
   if (!is_excel && (!is.null(sheet) || !is.null(sheet_pattern))) {
     warning("sheet arguments ignored for non-Excel file: ", file)
   }
   
   tryCatch({
     
-    sheets_to_read <- NULL
-    
-    if (is_excel) {
+    if (is_excel && !is_table_reader) {
+      
       all_sheets <- readxl::excel_sheets(file)
       
       if (!is.null(sheet_pattern)) {
-        # regex match
         sheets_to_read <- all_sheets[grepl(sheet_pattern, all_sheets, ignore.case = TRUE)]
-        
-        if(!is.null(anti_sheet_pattern)) {
-        sheets_to_read <- all_sheets[!grepl(anti_sheet_pattern, all_sheets, ignore.case = TRUE)]
-        }
-        
       } else if (!is.null(sheet)) {
         sheets_to_read <- sheet
       } else {
         sheets_to_read <- all_sheets
       }
       
-      if (length(sheets_to_read) == 0) {
-        stop("No sheets matched sheet_pattern in ", file)
+      if (!is.null(anti_sheet_pattern)) {
+        sheets_to_read <- sheets_to_read[
+          !grepl(anti_sheet_pattern, sheets_to_read, ignore.case = TRUE)
+        ]
       }
       
-      # read each sheet safely
+      if (length(sheets_to_read) == 0) {
+        stop("No sheets matched selection criteria in ", file)
+      }
+      
       dat <- purrr::map_dfr(
         sheets_to_read,
         function(s) {
           tmp <- reader(file, sheet = s, ...)
-          # Convert all columns to character to avoid bind_rows type issues
-          tmp <- dplyr::mutate(tmp, dplyr::across(.cols = everything(), .fns = as.character))
+          dplyr::mutate(tmp, dplyr::across(everything(), as.character))
         },
         .id = "sheet_name"
       )
       
-      # replace numeric .id with actual sheet names
       dat <- dplyr::mutate(dat, sheet_name = sheets_to_read[as.numeric(sheet_name)])
       
     } else {
@@ -103,11 +99,8 @@ safe_read_data <- function(file,
     
     dat <- tibble::as_tibble(dat)
     
-    # enforce columns safely
     if (!is.null(cols)) {
-      # add missing columns as NA (without coercing types)
       for (col in setdiff(cols, names(dat))) dat[[col]] <- NA
-      # reorder columns: user-specified first, then others (including sheet_name)
       dat <- dat[, c(cols, setdiff(names(dat), cols)), drop = FALSE]
     }
     
@@ -117,6 +110,7 @@ safe_read_data <- function(file,
     list(data = NULL, error = e$message, file = file)
   })
 }
+
 
 
 
